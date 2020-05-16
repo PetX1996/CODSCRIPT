@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2E7746CE-CFCD-4D3C-BC54-FFF91D76C923}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CODSCRIPT</RootNamespace>
+    <AssemblyName>CODSCRIPT</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Content\BallOfMud.cs" />
+    <Compile Include="Content\BaseTrees\FuncDefParam.cs" />
+    <Compile Include="Content\BaseTrees\OverwriteConstDef.cs" />
+    <Compile Include="Content\BaseTrees\SealedModifier.cs" />
+    <Compile Include="Content\BaseTrees\UsingDef.cs" />
+    <Compile Include="Content\Expressions\Operands\ArrayContentDef.cs" />
+    <Compile Include="Content\Expressions\Operands\UsingName.cs" />
+    <Compile Include="Content\ParsingInfo.cs" />
+    <Compile Include="Content\Statements\Iterations\IterationStatement.cs" />
+    <Compile Include="IMemberInfo.cs" />
+    <Compile Include="IReferenceInfo.cs" />
+    <Compile Include="NppInfo.cs" />
+    <Compile Include="ScriptManager.cs" />
+    <Compile Include="Content\BaseTrees\ConstDef.cs" />
+    <Compile Include="Content\DevCode.cs" />
+    <Compile Include="Content\Expressions\Helpers\FuncCallModifier.cs" />
+    <Compile Include="Content\Expressions\Operands\ConstName.cs" />
+    <Compile Include="Content\Expressions\Operators\BinaryOperator.cs" />
+    <Compile Include="Content\Expressions\Operators\UnaryOperator.cs" />
+    <Compile Include="Content\Statements\BlockStatement.cs" />
+    <Compile Include="Content\Statements\EmptyStatement.cs" />
+    <Compile Include="Content\Statements\ExpressionStatement.cs" />
+    <Compile Include="Content\Expressions\Operands\Assign.cs" />
+    <Compile Include="Content\Expressions\Operands\ArrayDef.cs" />
+    <Compile Include="Content\Expressions\Operands\DelegateDef.cs" />
+    <Compile Include="Content\Expressions\Operands\DelegateCall.cs" />
+    <Compile Include="Content\Expressions\Helpers\ArrayIndexer.cs" />
+    <Compile Include="Content\Expressions\Helpers\DataMember.cs" />
+    <Compile Include="Content\Expression.cs" />
+    <Compile Include="Content\Expressions\Operands\FuncCall.cs" />
+    <Compile Include="Content\Expressions\Operands\Literal.cs" />
+    <Compile Include="Content\Expressions\Operands\LocalizedString.cs" />
+    <Compile Include="Content\Expressions\Operands\PostfixIncDec.cs" />
+    <Compile Include="Content\Expressions\Operands\SignedNumber.cs" />
+    <Compile Include="Content\Expressions\Helpers\FuncArgs.cs" />
+    <Compile Include="Content\BaseTrees\FuncDef.cs" />
+    <Compile Include="Content\Group.cs" />
+    <Compile Include="Content\BaseTrees\AccessModifier.cs" />
+    <Compile Include="Content\Path.cs" />
+    <Compile Include="Content\SimpleTree.cs" />
+    <Compile Include="Content\BaseTrees\XMLBlock.cs" />
+    <Compile Include="Content\Statements\Iterations\DoWhileStatement.cs" />
+    <Compile Include="Content\Statements\Iterations\ForEachStatement.cs" />
+    <Compile Include="Content\Statements\Iterations\ForStatement.cs" />
+    <Compile Include="Content\Statements\Iterations\WhileStatement.cs" />
+    <Compile Include="Content\Statements\Jumps\BreakStatement.cs" />
+    <Compile Include="Content\Statements\Jumps\ContinueStatement.cs" />
+    <Compile Include="Content\Statements\Jumps\ReturnStatement.cs" />
+    <Compile Include="Content\Statements\Selections\IfElseStatement.cs" />
+    <Compile Include="Content\Statements\Selections\SwitchStatement.cs" />
+    <Compile Include="Content\Statements\Waits\WaitStatement.cs" />
+    <Compile Include="Content\Statements\Waits\WaittillFrameEndStatement.cs" />
+    <Compile Include="Errors.cs" />
+    <Compile Include="Content\IBlock.cs" />
+    <Compile Include="Content\IElement.cs" />
+    <Compile Include="Content\MoveInfo.cs" />
+    <Compile Include="Content\BaseTrees\PreProcessor.cs" />
+    <Compile Include="Content\BaseTree.cs" />
+    <Compile Include="Content\Scanner\Scanner.cs" />
+    <Compile Include="Content\Statement.cs" />
+    <Compile Include="Content\Expressions\Operands\StringArray.cs" />
+    <Compile Include="Content\Expressions\Operands\SubExpression.cs" />
+    <Compile Include="Content\Expressions\Operands\VarName.cs" />
+    <Compile Include="Content\Expressions\Operands\Vector.cs" />
+    <Compile Include="Extensions.cs" />
+    <Compile Include="ScriptFile.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ScriptInfo.cs" />
+    <Compile Include="ScriptCode.cs" />
+    <Compile Include="Content\Scanner\Token.cs" />
+    <Compile Include="Settings.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>copy /Y "$(TargetDir)CODSCRIPT.dll" "D:\Visual Studio 2010\Projects\CODSCRIPT\NppSourceCode\PowerEditor\visual.net\Unicode Debug\plugins\CODSCRIPTNpp\CODSCRIPT.dll"
+copy /Y "$(TargetDir)CODSCRIPT.pdb" "D:\Visual Studio 2010\Projects\CODSCRIPT\NppSourceCode\PowerEditor\visual.net\Unicode Debug\plugins\CODSCRIPTNpp\CODSCRIPT.pdb"</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
