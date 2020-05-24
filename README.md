@@ -73,3 +73,5 @@ Notepad++ plugin:
   - compile_CloseAfterCompile - ???
   - compile_Raw - ???
   - compile_CompareDate - ???
+  
+Developed between 2013-08-04 to 2014-07-04.
