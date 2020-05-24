@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Používa sa len pre potreby include alebo ako zdroj informácií v notepade, 
+	obsahuje len informácie potrebné pre prácu "z vonku" -->
+
+<scriptinfo>
+	<!-- Ak je extern True, nebude sa hľadať odpovedajúci script ale použije sa táto dokumentácia
+		Ak je False, použije sa dokumentácia len v prípade, že sa v scripte neurobili žiadne zmeny -->
+	<!-- Ak je global True, konštanty a funkcie budú dostupné globálne vo všetkých scriptoch -->
+	<settings global="True">
+		<!-- Podľa tohto mena sa dokumentácia zaradí v strome v notepade -->
+		<name>COD API - DEV</name>
+	</settings>
+	
+	<content>
+		<func name="Print" access="Public">
+			<self></self>
+			<summary>Development only - write to the console</summary>
+			<returns></returns>
+			<example>Print( "Stuff and things!" );</example>
+			<param name="text">text to be written</param>
+		</func>
+		<func name="PrintLn" access="Public">
+			<self></self>
+			<summary>Development only - write line to the console</summary>
+			<returns></returns>
+			<example>PrintLn( "I could be doing better!" );</example>
+			<param name="str">text to be written</param>
+			<param opt="True" name="str1">text to be written</param>
+			<param opt="True" name="str2">text to be written</param>
+		</func>	
+		<func name="Print3d" access="Public">
+			<self></self>
+			<summary>Draw 3d text on screen</summary>
+			<returns></returns>
+			<example>Print3d( start, "START", (1.0, 0.8, 0.5), 1, 3 );</example>
+			<param name="origin">3d position of text to be drawn</param>
+			<param name="text">The text to draw on the screen</param>
+			<param opt="True" name="color">RGB color of the line in a vector, defaults to white</param>
+			<param opt="True" name="alpha">alpha value of the text (how transparent), defaults to 1</param>
+			<param opt="True" name="scale">size scale of the text, defaults to 1</param>
+			<param opt="True" name="duration">How many server frames the text should persist through.</param>
+		</func>	
+		<func name="Line" access="Public">
+			<self></self>
+			<summary>Draw a debug line on screen</summary>
+			<returns></returns>
+			<example>Line( self.origin, self.origin + forwardFar, (0.9, 0.7, 0.6), false );</example>
+			<param name="start">start vector position of the line</param>
+			<param name="end">end vector position of the line</param>
+			<param opt="True" name="color">RGB color of the line in a vector, defaults to white</param>
+			<param opt="True" name="depthTest">whether to only draw the line when it is in front of objects, defaults to false. Depth test is only supported on pc.</param>
+			<param opt="True" name="duration">How many server frames the line should persist through.</param>
+		</func>	
+		<func name="Assert" access="Public">
+			<self></self>
+			<summary>Assert that the given statement is correct. The function will throw a script error if this is false.</summary>
+			<returns></returns>
+			<example>Assert ( enemyInSight == true );</example>
+			<param name="value">statement that is asserted to be correct</param>
+		</func>	
+		<func name="AssertEx" access="Public">
+			<self></self>
+			<summary>Assert that the given statement is correct. The function will throw a script error if this is false, with the given message.</summary>
+			<returns></returns>
+			<example>AssertEx( enemyInSight == true, "Script expected enemy to be in sight." );</example>
+			<param name="value">statement that is asserted to be correct</param>
+			<param name="message">error message</param>
+		</func>	
+		<func name="AssertMsg" access="Public">
+			<self></self>
+			<summary>Throws a script error with the given message.</summary>
+			<returns></returns>
+			<example>AssertMsg( "Unhandled enemy type." );</example>
+			<param name="message">error message</param>
+		</func>	
+		<func name="FPrintFields" access="Public">
+			<self></self>
+			<summary>Writes items out to a script-controlled file, inserting a comma in-between each one.</summary>
+			<returns></returns>
+			<example>FPrintFields( filenum, Player, Health, WeaponName );  //output to file: JohnnyBoy,100,M16</example>
+			<param name="fileNum">The number of the script file.</param>
+			<param name="output">The string to be output</param>
+		</func>	
+		<func name="FGetArg" access="Public">
+			<self></self>
+			<summary>Get a specific argument number from the current line</summary>
+			<returns></returns>
+			<example></example>
+			<param name="fileNum">The file number returned by openfile</param>
+			<param name="arg">the argument number</param>
+		</func>
+		<func name="OpenFile" access="Public">
+			<self></self>
+			<summary>Open a file for reading, writing, or appending. If successful returns a file number, otherwise returns -1</summary>
+			<returns></returns>
+			<example>filenum = OpenFile( "info.txt", "read" );</example>
+			<param name="fileName">The name of the file to open.</param>
+			<param name="mode">The file mode. Valid arguments are 'read', 'write' and 'append'.</param>
+		</func>
+		<func name="CloseFile" access="Public">
+			<self></self>
+			<summary>Close a script-controlled file. Returns 1 if successful and -1 if unsuccessful.</summary>
+			<returns></returns>
+			<example></example>
+			<param name="fileNum">The number of the script file.</param>
+		</func>
+		<func name="FPrintLn" access="Public">
+			<self></self>
+			<summary>Write text out to a script-controlled file</summary>
+			<returns></returns>
+			<example></example>
+			<param name="fileNum">The number of the script file.</param>
+			<param name="output">The string to be output</param>
+		</func>
+		<func name="FReadLn" access="Public">
+			<self></self>
+			<summary>Read the next line of comma separated value text from a script-controlled file. Returns the number of comma separated values in the line.</summary>
+			<returns></returns>
+			<example></example>
+			<param name="fileNum">The number of the script file.</param>
+		</func>		
+	</content>
+</scriptinfo>

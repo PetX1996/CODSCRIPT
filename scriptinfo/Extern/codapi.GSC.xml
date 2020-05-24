@@ -1,0 +1,3370 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Používa sa len pre potreby include alebo ako zdroj informácií v notepade, 
+	obsahuje len informácie potrebné pre prácu "z vonku" -->
+
+<scriptinfo>
+	<!-- Ak je extern True, nebude sa hľadať odpovedajúci script ale použije sa táto dokumentácia
+		Ak je False, použije sa dokumentácia len v prípade, že sa v scripte neurobili žiadne zmeny -->
+	<!-- Ak je global True, konštanty a funkcie budú dostupné globálne vo všetkých scriptoch -->
+	<settings global="True">
+		<!-- Podľa tohto mena sa dokumentácia zaradí v strome v notepade -->
+		<name>COD API</name>
+	</settings>
+	
+	<content>
+		<!-- EVENTS -->
+		<func name="notify" access="Public">
+			<self>Entity/Struct</self>
+			<summary>Notify a new event.</summary>
+			<returns></returns>
+			<example>player notify("rankUp", oldRank, newRank, xp);</example>
+			<param name="eventName"></param>
+			<param opt="True" name="arg0"></param>
+			<param opt="True" name="arg1"></param>
+			<param opt="True" name="arg2"></param>
+			<param opt="True" name="arg3"></param>
+			<param opt="True" name="arg4"></param>
+			<param opt="True" name="arg5"></param>
+			<param opt="True" name="arg6"></param>
+			<param opt="True" name="arg7"></param>
+			<param opt="True" name="arg8"></param>
+			<param opt="True" name="arg9"></param>
+			<param opt="True" name="arg10"></param>
+			<param opt="True" name="arg11"></param>
+			<param opt="True" name="arg12"></param>
+			<param opt="True" name="arg13"></param>
+			<param opt="True" name="arg14"></param>
+			<param opt="True" name="arg15"></param>
+			<param opt="True" name="arg16"></param>
+			<param opt="True" name="arg17"></param>
+			<param opt="True" name="arg18"></param>
+			<param opt="True" name="arg19"></param>
+		</func>	
+		<func name="endon" access="Public">
+			<self>Entity/Struct</self>
+			<summary>Kill current thread.</summary>
+			<returns></returns>
+			<example>player endon("rankUp");</example>
+			<param name="eventName"></param>
+		</func>	
+		<func name="waittill" access="Public">
+			<self>Entity/Struct</self>
+			<summary>Sleep current thread.</summary>
+			<returns></returns>
+			<example>player waittill("rankUp", oldRank, newRank, xp);</example>
+			<param name="eventName"></param>
+			<param out="True" opt="True" name="p0">Out parameter</param>
+			<param out="True" opt="True" name="p1">Out parameter</param>
+			<param out="True" opt="True" name="p2">Out parameter</param>
+			<param out="True" opt="True" name="p3">Out parameter</param>
+			<param out="True" opt="True" name="p4">Out parameter</param>
+			<param out="True" opt="True" name="p5">Out parameter</param>
+			<param out="True" opt="True" name="p6">Out parameter</param>
+			<param out="True" opt="True" name="p7">Out parameter</param>
+			<param out="True" opt="True" name="p8">Out parameter</param>
+			<param out="True" opt="True" name="p9">Out parameter</param>
+			<param out="True" opt="True" name="p10">Out parameter</param>
+			<param out="True" opt="True" name="p11">Out parameter</param>
+			<param out="True" opt="True" name="p12">Out parameter</param>
+			<param out="True" opt="True" name="p13">Out parameter</param>
+			<param out="True" opt="True" name="p14">Out parameter</param>
+			<param out="True" opt="True" name="p15">Out parameter</param>
+			<param out="True" opt="True" name="p16">Out parameter</param>
+			<param out="True" opt="True" name="p17">Out parameter</param>
+			<param out="True" opt="True" name="p18">Out parameter</param>
+			<param out="True" opt="True" name="p19">Out parameter</param>
+		</func>			
+		<!-- EVENTS -->
+		<!-- UTILITY -->
+		<func name="waittillmatch" access="Public">
+			<self></self>
+			<summary>Unknown</summary>
+			<returns></returns>
+			<example></example>
+			<param name="unknown"></param>
+		</func>		
+		<func name="prof_begin" access="Public">
+			<self></self>
+			<summary>Unknown</summary>
+			<returns></returns>
+			<example></example>
+			<param name="unknown"></param>
+		</func>	
+		<func name="prof_end" access="Public">
+			<self></self>
+			<summary>Unknown</summary>
+			<returns></returns>
+			<example></example>
+			<param name="unknown"></param>
+		</func>			
+		<!-- UTILITY -->
+		<!-- LEVEL FUNCTIONS -->
+		<func name="CreatePrintChannel" access="Public">
+			<self></self>
+			<summary>Open a print channel</summary>
+			<returns></returns>
+			<example>CreatePrintChannel( "script_bler" );</example>
+			<param name="channelName">name of channel to be opened</param>
+		</func>		
+		<func name="SetPrintChannel" access="Public">
+			<self></self>
+			<summary>Set the current print channel.</summary>
+			<returns>Returns the previous channel.</returns>
+			<example>prevchannel = SetPrintChannel( "script_bler" );</example>
+			<param name="channel">name (or number) of channel to print to</param>
+		</func>
+		<func name="LogString" access="Public">
+			<self>[Entity]</self>
+			<summary>Unknown</summary>
+			<returns></returns>
+			<example></example>
+			<param name="unknown"></param>
+		</func>	
+		<func name="GetEnt" access="Public">
+			<self></self>
+			<summary>Looks up entities by key and name</summary>
+			<returns>Entity</returns>
+			<example>spawner = GetEnt( "doorguy1", "targetname" );</example>
+			<param name="value">value to search for</param>
+			<param name="key">key that value goes with</param>
+		</func>	
+		<func name="GetEntArray" access="Public">
+			<self></self>
+			<summary>Gets an array of entities that have the given key, name pair.</summary>
+			<returns>Array of Entities</returns>
+			<example>aeExplosions = GetEntArray( strExplosion, "targetname" );</example>
+			<param opt="True" name="value">value to search for</param>
+			<param opt="True" name="key">key that value goes with</param>
+		</func>	
+		<func name="Spawn" access="Public">
+			<self></self>
+			<summary>Spawns a new entity and returns a reference to the entity </summary>
+			<returns></returns>
+			<example>org = Spawn( "script_origin",self getorigin() );</example>
+			<param name="classname">The name of the class to spawn (constant string)</param>
+			<param name="origin">The position where the entity is to be spawned (vector)</param>
+			<param opt="True" name="flags">spawn flags (integer)</param>
+			<param opt="True" name="radius">If the entity is a 'trigger_radius' entity then this is the radius 
+of the trigger. Otherwise this parameter is invalid.</param>
+			<param opt="True" name="height">If the entity is a 'trigger_radius' entity then this is the height 
+of the trigger. Otherwise this parameter is invalid.</param>
+		</func>	
+		<func name="SpawnPlane" access="Public">
+			<self></self>
+			<summary>Unknown</summary>
+			<returns></returns>
+			<example></example>
+			<param name="player">Player</param>
+			<param name="className">String</param>
+			<param name="origin">Vector</param>
+		</func>	
+		<func name="SpawnTurret" access="Public">
+			<self></self>
+			<summary>Spawns a new turret, eg MG42 or flak gun and returns a reference to it</summary>
+			<returns>Turret</returns>
+			<example></example>
+			<param name="classname">The classname of the entity (constant string)</param>
+			<param name="origin">The position of the vehicle (vector)</param>
+			<param name="weaponinfoname">The name of the weapon info to use for this turret (string)</param>
+		</func>	
+		<func name="PreCacheTurret" access="Public">
+			<self></self>
+			<summary>Precaches the weapon info structure for the turret. Must be called before any wait statements 
+in the level script</summary>
+			<returns></returns>
+			<example>PreCacheTurret( "mg42_tank_tiger" );</example>
+			<param name="turretInfo">The turret info name (string)</param>
+		</func>	
+		<func name="SpawnStruct" access="Public">
+			<self></self>
+			<summary>Allocates a structure</summary>
+			<returns>Struct</returns>
+			<example>ent = SpawnStruct();</example>
+		</func>	
+		<func name="SpawnHelicopter" access="Public">
+			<self></self>
+			<summary>Unknown</summary>
+			<returns>Vehicle</returns>
+			<example></example>
+			<param name="owner"></param>
+			<param name="origin"></param>
+			<param name="angles"></param>
+			<param name="model"></param>
+			<param name="targetname"></param>
+		</func>	
+		<func name="IsDefined" access="Public">
+			<self></self>
+			<summary>Checks whether this entity/variable is defined</summary>
+			<returns>Bool</returns>
+			<example>if ( IsDefined( gun_owner ) ) ...</example>
+			<param name="object">object that may or may not be defined</param>
+		</func>	
+		<func name="IsString" access="Public">
+			<self></self>
+			<summary>Checks whether this entity/variable is a string</summary>
+			<returns>Bool</returns>
+			<example>if ( IsString( gun_owner ) ) ...</example>
+			<param name="variable">variable that may or may not be a string</param>
+		</func>	
+		<func name="IsAlive" access="Public">
+			<self></self>
+			<summary>Checks whether this entity is alive</summary>
+			<returns>Bool</returns>
+			<example>if ( IsAlive( gun_owner ) ) ...</example>
+			<param name="entity">An entity object that might be alive or dead</param>
+		</func>	
+		<func name="GetDvar" access="Public">
+			<self></self>
+			<summary>Gets the value of a dvar, as a string.</summary>
+			<returns>String - dvar value</returns>
+			<example>if( GetDvar( "debug_skipintro" ) == "on" ) ...</example>
+			<param name="dvar">The dvar name.</param>
+		</func>	
+		<func name="GetDvarInt" access="Public">
+			<self></self>
+			<summary>Gets the value of a dvar, as an integer.</summary>
+			<returns>Int - dvar value</returns>
+			<example>level.fogtype = GetDvarInt( "scr_fog_type" );</example>
+			<param name="dvar">The dvar name.</param>
+		</func>			
+		<func name="GetDvarFloat" access="Public">
+			<self></self>
+			<summary>Gets the value of a dvar, as a floating point number.</summary>
+			<returns>Float - dvar value</returns>
+			<example>oldDelay = GetDvarFloat( "effect_delay" );</example>
+			<param name="dvar">The dvar name.</param>
+		</func>	
+		<func name="SetDvar" access="Public">
+			<self></self>
+			<summary>Sets the value of a script dvar. Can not set code dvars. Script dvars are not preserved in savegames.</summary>
+			<returns></returns>
+			<example>SetDvar( "r_eyesAdjust", "1" );</example>
+			<param name="dvar">The dvar name as a string.</param>
+			<param name="value">The dvar value.</param>
+			<param name="codInfo" opt="True">Bool - Visible as game variables.</param>
+		</func>	
+		<func name="GetTime" access="Public">
+			<self></self>
+			<summary>Gets the level time in Milliseconds from the start of the level.</summary>
+			<returns></returns>
+			<example>nextNodeTime = GetTime() + 500;</example>
+		</func>	
+		<func name="GetEntByNum" access="Public">
+			<self></self>
+			<summary>Gets an entity from its entity number</summary>
+			<returns>Entity</returns>
+			<example>entity = GetEntByNum( entnum );</example>
+			<param name="entityNumber">(integer) The number of the entity to get</param>
+		</func>	
+		<func name="GetWeaponModel" access="Public">
+			<self></self>
+			<summary>Returns the name of the weapon model used for the given weapon.</summary>
+			<returns></returns>
+			<example>sniper_model = GetWeaponModel("mosin_nagant_sniper", 0);</example>
+			<param name="weaponName">The name of the weapon.</param>
+			<param opt="True" name="modelVariant">Model variant (0-15).</param>
+		</func>	
+		<func name="GetAnimLength" access="Public">
+			<self></self>
+			<summary>Gets the length of an animation </summary>
+			<returns></returns>
+			<example>cycleTime = GetAnimLength( climbAnim );</example>
+			<param name="animation">a primitive animation: calling this function on a non-primitive animation will fail</param>
+		</func>	
+		<func name="AnimHasNotetrack" access="Public">
+			<self></self>
+			<summary>queries the given animation for a note track </summary>
+			<returns></returns>
+			<example>if ( IsDefined( facialanim ) &amp;&amp; AnimHasNotetrack( facialanim, "dialogue" ) ) ...</example>
+			<param name="animation">an animation</param>
+			<param name="noteTrack">a constant string with the name of the note track</param>
+		</func>	
+		<func name="GetNotetrackTimes" access="Public">
+			<self></self>
+			<summary>Gets an array of the times during an animation that the given notetrack occurs. 
+The times returned are fractional (0 to 1). </summary>
+			<returns></returns>
+			<example>exitAlignTimes = GetNotetrackTimes( exitAnim, "exit_align" );</example>
+			<param name="animation">an animation</param>
+			<param name="noteTrack">a constant string with the name of the note track</param>
+		</func>	
+		<func name="GetBrushModelCenter" access="Public">
+			<self></self>
+			<summary>deprecated - Use GetOrigin </summary>
+			<returns></returns>
+			<example></example>
+		</func>	
+		<func name="Objective_Add" access="Public">
+			<self></self>
+			<summary>Adds a new objective </summary>
+			<returns></returns>
+			<example>Objective_Add( objective_number, "active", objective_text, (closest.bomb.origin) );</example>
+			<param name="objective_number">The number of the objective to add</param>
+			<param name="state">A string value representing the state of the objective. Valid states are "empty", 
+"active", "invisible", "done", "current" and "failed"</param>
+			<param opt="True" name="text">The text to use for the objective. This should be a valid localized text reference</param>
+			<param opt="True" name="position">The position of the objective</param>
+			<param opt="True" name="iconshader">The objective icon to embed</param>
+		</func>	
+		<func name="Objective_Delete" access="Public">
+			<self></self>
+			<summary>Removes an objective</summary>
+			<returns></returns>
+			<example>Objective_Delete( 1 );</example>
+			<param name="objective_number">The number of the objective to remove</param>
+		</func>	
+		<func name="Objective_State" access="Public">
+			<self></self>
+			<summary>Sets the state of an objective</summary>
+			<returns></returns>
+			<example>Objective_State( 8, "done" );</example>
+			<param name="objective_number">The number of the objective to alter</param>
+			<param name="state">A string value representing the state of the objective. Valid states are "empty", 
+"active", "invisible", "done", "current" and "failed"</param>
+		</func>	
+		<func name="Objective_Icon" access="Public">
+			<self></self>
+			<summary>Set the compass icon for an objective </summary>
+			<returns></returns>
+			<example>Objective_Icon( 0, game["radio_none"] );</example>
+			<param name="objective_number">The ID of the objective to alter</param>
+			<param name="icon">A compass icon</param>
+		</func>	
+		<func name="Objective_Position" access="Public">
+			<self></self>
+			<summary>Set the position of an objective, assumed to be the zeroth position, 
+must use objective_additionalposition to set a different position index</summary>
+			<returns></returns>
+			<example>Objective_Position( 4, get_objective_position( "plant_boilerbomb_trigger" ) );</example>
+			<param name="objective_number">The ID of the objective to alter</param>
+			<param name="position">The position of the objective</param>
+		</func>	
+		<func name="Objective_OnEntity" access="Public">
+			<self></self>
+			<summary>Sets the objective to get its position from an entity.</summary>
+			<returns></returns>
+			<example></example>
+			<param name="objective_number">The ID of the objective to alter</param>
+			<param name="entity">The entity to set the objective to</param>
+		</func>	
+		<func name="Objective_Current" access="Public">
+			<self></self>
+			<summary>Set which objective(s) are currently being done. If none specified, there's no current objective. 
+Current objectives that are not specified to still be current, are set to active.</summary>
+			<returns></returns>
+			<example>Objective_Current( aHardpointObjs[0].obj, aHardpointObjs[1].obj, aHardpointOs[2].obj );</example>
+			<param name="objective_index">The ID of the objective to set current.</param>
+			<param name="objective_index">Any number of additional IDs to set current.</param>
+		</func>	
+		<func name="Missile_CreateAttractorEnt" access="Public">
+			<self></self>
+			<summary>Creates a missile attractor at the origin of an entity</summary>
+			<returns></returns>
+			<example>attractor = Missile_CreateAttractorEnt( enemy_chopper, 10000, 6000 );</example>
+			<param name="entity">The entity that is to be an attractor</param>
+			<param name="strength">The strength of the attractor (maximum acceleration it can apply to a missile)</param>
+			<param name="maxDist">The maximum distance at which the missile can be affected. The effect of the attractor 
+falls off from strength to zero from the center to this distance away from the center.</param>
+		</func>	
+		<func name="Missile_CreateAttractorOrigin" access="Public">
+			<self></self>
+			<summary>Creates a missile attractor at the given location</summary>
+			<returns></returns>
+			<example>attractor = Missile_CreateAttractorOrigin( (100, 350, 10), 10000, 6000 );</example>
+			<param name="origin">The center of the attractor</param>
+			<param name="strength">The strength of the attractor (maximum acceleration it can apply to a missile)</param>
+			<param name="maxDist">The maximum distance at which the missile can be affected. The effect of the attractor 
+falls off from strength to zero from the center to this distance away from the center.</param>
+		</func>			
+		<func name="Missile_CreateRepulsorEnt" access="Public">
+			<self></self>
+			<summary>Creates a missile repulsor at the origin of an entity</summary>
+			<returns></returns>
+			<example>repulsor = Missile_CreateRepulsorEnt( enemy_chopper, 10000, 6000 );</example>
+			<param name="entity">The entity that is to be a repulsor</param>
+			<param name="strength">The strength of the repulsor (maximum acceleration it can apply to a missile)</param>
+			<param name="maxDist">The maximum distance at which the missile can be affected. The effect of the attractor 
+falls off from strength to zero from the center to this distance away from the center.</param>
+		</func>	
+		<func name="Missile_CreateRepulsorOrigin" access="Public">
+			<self></self>
+			<summary>Creates a missile Repulsor at the given location</summary>
+			<returns></returns>
+			<example>repulsor = Missile_CreateRepulsorOrigin( (100, 350, 10), 10000, 6000 );</example>
+			<param name="origin">The center of the Repulsor</param>
+			<param name="strength">The strength of the Repulsor (maximum acceleration it can apply to a missile)</param>
+			<param name="maxDist">The maximum distance at which the missile can be affected. The effect of the attractor 
+falls off from strength to zero from the center to this distance away from the center.</param>
+		</func>	
+		<func name="Missile_DeleteAttractor" access="Public">
+			<self></self>
+			<summary>Deletes a missile attractor or repulsor</summary>
+			<returns></returns>
+			<example>Missile_DeleteAttractor( attractor );</example>
+			<param name="attractor">The attractor or repulsor</param>
+		</func>	
+		<func name="BulletTrace" access="Public">
+			<self></self>
+			<summary>Allows script to do a point trace with MASK_SHOT. Returns hit position, hit entity, hit surface normal.</summary>
+			<returns></returns>
+			<example>trace = BulletTrace( magicBulletOrigin.origin, eyePos, true, undefined );</example>
+			<param name="start">The bullet start point</param>
+			<param name="end">The bullet end point</param>
+			<param name="hitCharacters">When set to true, this will trace for character hits</param>
+			<param name="ignoreEntity">An entity to ignore</param>
+		</func>	
+		<func name="BulletTracePassed" access="Public">
+			<self></self>
+			<summary>Allows script to do a point trace with MASK_SHOT. Returns true if trace complete, else returns false.</summary>
+			<returns></returns>
+			<example>success = BulletTracePassed( magicBulletOrigin.origin, eyePos, true, undefined);</example>
+			<param name="start">The bullet start point</param>
+			<param name="end">The bullet end point</param>
+			<param name="hitCharacters">When set to true, this will trace for character hits</param>
+			<param name="ignoreEntity">An entity to ignore</param>
+		</func>	
+		<func name="SightTracePassed" access="Public">
+			<self></self>
+			<summary>Allows script to do a point trace with MASK_OPAQUE_AI. Returns true if trace complete, else returns false.</summary>
+			<returns></returns>
+			<example>success = SightTracePassed( magicBulletOrigin.origin, eyePos, true, undefined );</example>
+			<param name="start">The bullet start point</param>
+			<param name="end">The bullet end point</param>
+			<param name="hitCharacters">When set to true, this will trace for character hits</param>
+			<param name="ignoreEntity">An entity to ignore</param>
+		</func>	
+		<func name="PhysicsTrace" access="Public">
+			<self></self>
+			<summary>Physics trace, ignoring characters. Returns the endpos vector.</summary>
+			<returns></returns>
+			<example>endpos = PhysicsTrace( start, end );</example>
+			<param name="start">The start point</param>
+			<param name="end">The end point</param>
+		</func>	
+		<func name="PlayerPhysicsTrace" access="Public">
+			<self></self>
+			<summary>Physics trace using player capsule size, ignoring characters. Returns the endpos vector.</summary>
+			<returns></returns>
+			<example>endpos = PlayerPhysicsTrace( start, end );</example>
+			<param name="start">The start point</param>
+			<param name="end">The end point</param>
+			<param opt="True" name="hitCharacters">When set to true, this will trace for character hits</param>
+			<param opt="True" name="ignoreEntity">An entity to ignore</param>
+		</func>	
+		<func name="GetMoveDelta" access="Public">
+			<self></self>
+			<summary>Returns the movement vector difference in the given animation</summary>
+			<returns></returns>
+			<example></example>
+			<param name="anim">An animation</param>
+			<param name="startTime">The start time as a fraction of the total animation time, from 0 to 1</param>
+			<param name="endTime">The end time as a fraction of the total animation time, from 0 to 1</param>
+		</func>	
+		<func name="GetAngleDelta" access="Public">
+			<self></self>
+			<summary>Returns the rotation difference in the given animation</summary>
+			<returns></returns>
+			<example></example>
+			<param name="anim">An animation</param>
+			<param name="startTime">The start time as a fraction of the total animation time, from 0 to 1</param>
+			<param name="endTime">The end time as a fraction of the total animation time, from 0 to 1</param>
+		</func>	
+		<func name="GetNorthYaw" access="Public">
+			<self></self>
+			<summary>Returns the yaw value of North</summary>
+			<returns></returns>
+			<example>northYaw = GetNorthYaw();</example>
+		</func>	
+		<func name="RandomInt" access="Public">
+			<self></self>
+			<summary>Returns a random integer between 0 and max-1 inclusive</summary>
+			<returns>Int</returns>
+			<example>if ( RandomInt( 100 ) > 50 ) ...</example>
+			<param name="max">The maximum integer size</param>
+		</func>	
+		<func name="RandomFloat" access="Public">
+			<self></self>
+			<summary>Returns a random floating point number r, where 0 &lt;= r &lt; max </summary>
+			<returns>Float</returns>
+			<example>if ( RandomFloat( 100 ) > 50 ) ...</example>
+			<param name="max">The maximum floating point size</param>
+		</func>	
+		<func name="RandomIntRange" access="Public">
+			<self></self>
+			<summary>Returns a random integer r, where min &lt;= r &lt; max </summary>
+			<returns>Int</returns>
+			<example>rand = RandomIntRange( 3, 5 );</example>
+			<param name="min">The minimum result</param>
+			<param name="max">The maximum result + 1</param>
+		</func>	
+		<func name="RandomFloatRange" access="Public">
+			<self></self>
+			<summary>Returns a random floating point number r, where min &lt;= r &lt; max </summary>
+			<returns>Float</returns>
+			<example>rand = RandomFloatRange( 3.0, 5.0 );</example>
+			<param name="min">The minimum result</param>
+			<param name="max">The maximum result</param>
+		</func>	
+		<func name="Sin" access="Public">
+			<self></self>
+			<summary>Returns the sin of an angle</summary>
+			<returns>Float</returns>
+			<example>frac = Sin( degrees );</example>
+			<param name="angle">An angle in degrees</param>
+		</func>	
+		<func name="Cos" access="Public">
+			<self></self>
+			<summary>Returns the cos of an angle</summary>
+			<returns>Float</returns>
+			<example>frac = Cos( degrees );</example>
+			<param name="angle">An angle in degrees</param>
+		</func>	
+		<func name="Tan" access="Public">
+			<self></self>
+			<summary>Returns the tan of an angle</summary>
+			<returns>Float</returns>
+			<example>frac = Tan( degrees );</example>
+			<param name="angle">An angle in degrees</param>
+		</func>	
+		<func name="ASin" access="Public">
+			<self></self>
+			<summary>Returns an angle corresponding to a particular sin value</summary>
+			<returns>Float</returns>
+			<example>upAngle = ASin( upAmount );</example>
+			<param name="sinValue">A sin value </param>
+		</func>	
+		<func name="ACos" access="Public">
+			<self></self>
+			<summary>Returns an angle corresponding to a particular cosine value</summary>
+			<returns>Float</returns>
+			<example>upAngle = ACos( distanceratio );</example>
+			<param name="cosValue">A cos value </param>
+		</func>	
+		<func name="ATan" access="Public">
+			<self></self>
+			<summary>Returns an angle corresponding to a particular tangential value</summary>
+			<returns>Float</returns>
+			<example>upAngle = ATan( height/distance );</example>
+			<param name="tanValue">A tangential value </param>
+		</func>	
+		<func name="Int" access="Public">
+			<self></self>
+			<summary>Casts a floating point number or a string to an integer</summary>
+			<returns>Int</returns>
+			<example>x = Int( self.HUDHealthHeight );</example>
+			<param name="value">A string or floating point number to cast to an integer</param>
+		</func>	
+		<func name="Abs" access="Public">
+			<self></self>
+			<summary>Returns an absolute value from a number</summary>
+			<returns></returns>
+			<example></example>
+			<param name="number"></param>
+		</func>	
+		<func name="Min" access="Public">
+			<self></self>
+			<summary>Returns a smaller number</summary>
+			<returns></returns>
+			<example></example>
+			<param name="number1"></param>
+			<param name="number2"></param>
+		</func>	
+		<func name="Max" access="Public">
+			<self></self>
+			<summary>Returns a bigger number</summary>
+			<returns></returns>
+			<example></example>
+			<param name="number1"></param>
+			<param name="number2"></param>
+		</func>	
+		<func name="Floor" access="Public">
+			<self></self>
+			<summary>Unknown</summary>
+			<returns></returns>
+			<example></example>
+			<param name="unknown"></param>
+		</func>	
+		<func name="Ceil" access="Public">
+			<self></self>
+			<summary>Unknown</summary>
+			<returns></returns>
+			<example></example>
+			<param name="unknown"></param>
+		</func>	
+		<func name="Sqrt" access="Public">
+			<self></self>
+			<summary>Unknown</summary>
+			<returns></returns>
+			<example></example>
+			<param name="unknown"></param>
+		</func>	
+		<func name="VectorFromLineToPoint" access="Public">
+			<self></self>
+			<summary>Given a line and a point P, this returns a vector perpendicular to the line 
+and pointing from the line to P.</summary>
+			<returns></returns>
+			<example>myvector = VectorFromLineToPoint( A, B, P );</example>
+			<param name="SegmentA">One point on the line</param>
+			<param name="SegmentB">Another point on the line</param>
+			<param name="P">The point</param>
+		</func>	
+		<func name="PointOnSegmentNearestToPoint" access="Public">
+			<self></self>
+			<summary>Given a line segment and a point P, this returns the point on the segment that is closest to P.</summary>
+			<returns></returns>
+			<example>nearestPoint = PointOnSegmentNearestToPoint( A, B, P );</example>
+			<param name="SegmentA">One endpoint of the line segment</param>
+			<param name="SegmentB">Other endpoint of the line segment</param>
+			<param name="P">The point</param>
+		</func>	
+		<func name="Distance" access="Public">
+			<self></self>
+			<summary>Returns the distance between two points</summary>
+			<returns>Float</returns>
+			<example>dist = Distance( org, ai[i].origin );</example>
+			<param name="point1">The first point</param>
+			<param name="point2">The second point</param>
+		</func>	
+		<func name="Distance2D" access="Public">
+			<self></self>
+			<summary>Returns the distance between two points, ignores height difference.</summary>
+			<returns>Float</returns>
+			<example>dist = Distance2D( org, ai[i].origin );</example>
+			<param name="point1">The first point</param>
+			<param name="point2">The second point</param>
+		</func>	
+		<func name="DistanceSquared" access="Public">
+			<self></self>
+			<summary>Returns the squared distance between two points - this is cheaper than the actual 
+distance as it doesn't involve a square root</summary>
+			<returns>Float</returns>
+			<example>dist2 = DistanceSquared( models[j].origin, center );</example>
+			<param name="point1">The first point</param>
+			<param name="point2">The second point</param>
+		</func>	
+		<func name="Length" access="Public">
+			<self></self>
+			<summary>Returns the length of the given vector</summary>
+			<returns>Float</returns>
+			<example>dist = Length( models[j].origin - center );</example>
+			<param name="vector">A vector</param>
+		</func>	
+		<func name="LengthSquared" access="Public">
+			<self></self>
+			<summary>Returns the squared vector length for the given vector - this is cheaper than the actual 
+vector length as it doesn't involve a square root</summary>
+			<returns>Float</returns>
+			<example>dist2 = LengthSquared( models[j].origin - center );</example>
+			<param name="vector">A vector</param>
+		</func>	
+		<func name="Closer" access="Public">
+			<self></self>
+			<summary>Tests which of two points is the closest. Returns true if point a is closer 
+to the reference than point b</summary>
+			<returns>Bool</returns>
+			<example>if( Closer( center, models[j].origin , models[i].origin ) ) ...</example>
+			<param name="reference">The base position</param>
+			<param name="pointA">The first point </param>
+			<param name="pointB">The second point</param>
+		</func>	
+		<func name="VectorDot" access="Public">
+			<self></self>
+			<summary>Returns the dot product of two vectors</summary>
+			<returns>Float</returns>
+			<example></example>
+			<param name="vectorA">The first vector</param>
+			<param name="vectorB">The second vector</param>
+		</func>	
+		<func name="VectorNormalize" access="Public">
+			<self></self>
+			<summary>Returns a normalized copy of this vector</summary>
+			<returns>Vector</returns>
+			<example>difference = VectorNormalize( end - start );</example>
+			<param name="vector">The vector to normalize</param>
+		</func>	
+		<func name="VectorToAngles" access="Public">
+			<self></self>
+			<summary>Returns a set of angles corresponding to the given vector.</summary>
+			<returns>Vector</returns>
+			<example>angles = VectorToAngles( end - start );</example>
+			<param name="vector">The vector to convert to angles</param>
+		</func>	
+		<func name="VectorLerp" access="Public">
+			<self></self>
+			<summary>Linear interpolates between two vectors.</summary>
+			<returns>Vector</returns>
+			<example>color = VectorLerp( oldColor, newColor, timeElapsed / timeTotal );</example>
+			<param name="from">The vector whose value is used when fraction is 0</param>
+			<param name="to">The vector whose value is used when fraction is 1</param>
+			<param name="fraction">The fraction of the way between vectors. Values less than 0 or greater than 1 
+do linear extrapolation.</param>
+		</func>	
+		<func name="AnglesToUp" access="Public">
+			<self></self>
+			<summary>Returns the up vector corresponding to a set of angles.</summary>
+			<returns>Vector</returns>
+			<example>up = AnglesToUp( angles );</example>
+			<param name="angles">A set of angles</param>
+		</func>	
+		<func name="AnglesToRight" access="Public">
+			<self></self>
+			<summary>Returns the right vector corresponding to a set of angles.</summary>
+			<returns></returns>
+			<example>right = AnglesToRight( angles );</example>
+			<param name="angles">A set of angles</param>
+		</func>	
+		<func name="AnglesToForward" access="Public">
+			<self></self>
+			<summary>Returns the forward vector corresponding to a set of angles.</summary>
+			<returns></returns>
+			<example>forward = AnglesToForward( forward );</example>
+			<param name="angles">A set of angles</param>
+		</func>	
+		<func name="CombineAngles" access="Public">
+			<self></self>
+			<summary>Returns angles b reoriented by angles a.</summary>
+			<returns>Vector</returns>
+			<example>crateAnglesInWorld = CombineAngles( boatAngles, crateAnglesInBoat );</example>
+			<param name="anglesA">Angles representing the orientation in which to place anglesB</param>
+			<param name="anglesB">Angles which will be reoriented</param>
+		</func>	
+		<func name="IsSubStr" access="Public">
+			<self></self>
+			<summary>Returns true/false if subString is a subString of string. Case sensitive.</summary>
+			<returns></returns>
+			<example></example>
+			<param name="string"></param>
+			<param name="subString"></param>
+		</func>	
+		<func name="GetSubStr" access="Public">
+			<self></self>
+			<summary>Returns the substring of characters &gt;= startIndex and &lt; endIndex. endIndex is optional.</summary>
+			<returns></returns>
+			<example></example>
+			<param name="string"></param>
+			<param name="startIndex"></param>
+			<param opt="True" name="endIndex"></param>
+		</func>	
+		<func name="ToLower" access="Public">
+			<self></self>
+			<summary>Converts string to a lower case string which is returned.</summary>
+			<returns></returns>
+			<example></example>
+			<param name="string"></param>
+		</func>	
+		<func name="StrTok" access="Public">
+			<self></self>
+			<summary>Tokenizes string by the delimiters delim. Returns the array of string tokens.</summary>
+			<returns></returns>
+			<example></example>
+			<param name="string"></param>
+			<param name="delim"></param>
+		</func>	
+		<func name="MusicPlay" access="Public">
+			<self></self>
+			<summary>Play the given piece of music.</summary>
+			<returns></returns>
+			<example>MusicPlay( "redsquare_dark", false );</example>
+			<param name="soundalias">The piece to play. Must be a valid sound alias</param>
+			<param name="timescale" opt="True">Whether this music is effected by timescale changes. 0 for false, 
+nonzero for true. defaults to true.</param>
+			<param name="overrideCheat" opt="True">Certain player cheats can disable this function, set this true 
+to force the issue.</param>
+		</func>	
+		<func name="MusicStop" access="Public">
+			<self></self>
+			<summary>Stop playing music.</summary>
+			<returns></returns>
+			<example>MusicStop( 3 );</example>
+			<param name="time" opt="True">The time over which the music will fade in seconds. If this option 
+is not present then the music will stop immediately.</param>
+			<param name="overrideCheat" opt="True">Certain player cheats can disable this function, set this true 
+to force the issue.</param>
+		</func>	
+		<func name="SoundFade" access="Public">
+			<self></self>
+			<summary>Fades the sound out.</summary>
+			<returns></returns>
+			<example>SoundFade( 3 );</example>
+			<param name="time">The time over which the sound will fade in seconds. If this option is not present 
+then the music will stop immediately.</param>
+		</func>	
+		<func name="AmbientPlay" access="Public">
+			<self></self>
+			<summary>Play the given piece of ambient sound.</summary>
+			<returns></returns>
+			<example>AmbientPlay( "redsquare_dark" );</example>
+			<param name="ambient">Sound alias name. Must be a valid sound alias</param>
+			<param name="fadetime" opt="True">Fade in time in seconds. If not used then the track will start immediately</param>
+		</func>	
+		<func name="AmbientStop" access="Public">
+			<self></self>
+			<summary>Stops all ambient sounds (excluding the music track).</summary>
+			<returns></returns>
+			<example>AmbientStop( 2 );</example>
+			<param name="fadetime" opt="True">Fade out time in seconds. If not used then the sounds will stop immediately</param>
+		</func>	
+		<func name="PreCacheModel" access="Public">
+			<self></self>
+			<summary>Precaches the given model. It must be called before any wait statements in the level script.</summary>
+			<returns></returns>
+			<example>PreCacheModel( "prop_panzerfaust_lid" );</example>
+			<param name="model">The name of the model to precache.</param>
+		</func>	
+		<func name="PreCacheShellShock" access="Public">
+			<self></self>
+			<summary>Precaches the shellshock effect. It must be called before any wait statements in the level script.</summary>
+			<returns></returns>
+			<example></example>
+			<param name="shellshockEffectName">The name of the shellshock effect to precache.</param>
+		</func>	
+		<func name="PreCacheItem" access="Public">
+			<self></self>
+			<summary>Precaches the given item. It must be called before any wait statements in the level script.</summary>
+			<returns></returns>
+			<example></example>
+			<param name="itemName">The name of the item to precache.</param>
+		</func>	
+		<func name="PreCacheShader" access="Public">
+			<self></self>
+			<summary>Precaches the given shader. It must be called before any wait statements in the level script.</summary>
+			<returns></returns>
+			<example>PreCacheShader( "artillery_firing" );</example>
+			<param name="materialName">The name of the shader to precache.</param>
+		</func>	
+		<func name="PreCacheString" access="Public">
+			<self></self>
+			<summary>Precaches the given string. It must be called before any wait statements in the level script.</summary>
+			<returns></returns>
+			<example></example>
+			<param name="string">The name of the string to precache.</param>
+		</func>	
+		<func name="PreCacheRumble" access="Public">
+			<self></self>
+			<summary>Precaches the given rumble. It must be called before any wait statements in the level script.</summary>
+			<returns></returns>
+			<example></example>
+			<param name="rumble">The name of the rumble to precache.</param>
+		</func>	
+		<func name="LoadFX" access="Public">
+			<self></self>
+			<summary>Load the given effect</summary>
+			<returns>FX ID</returns>
+			<example>fx = LoadFX( "explosions/large_vehicle_explosion" );</example>
+			<param name="filename">The filename of the effect to be loaded, without "fx/" or ".efx"</param>
+		</func>	
+		<func name="PlayFX" access="Public">
+			<self></self>
+			<summary>Play this effect.</summary>
+			<returns></returns>
+			<example>fx = PlayFX( enginesmoke, engine.origin );</example>
+			<param name="effectID">The effect id returned by loadfx</param>
+			<param name="position">The world position of the effect</param>
+			<param opt="True" name="forwardVector">The forward vector of the effect</param>
+			<param opt="True" name="upVector">The up vector of the effect</param>
+		</func>	
+		<func name="PlayFXOnTag" access="Public">
+			<self></self>
+			<summary>Play this effect on the entity and tag.</summary>
+			<returns></returns>
+			<example>fx = PlayFXOnTag( id, ent, tag );</example>
+			<param name="effectID">The effect id returned by loadfx</param>
+			<param name="entity">The entity to attach the effect to</param>
+			<param name="tagName">Tag name to attach the effect to</param>
+		</func>	
+		<func name="PlayLoopedFX" access="Public">
+			<self></self>
+			<summary>Play this effect in a loop.</summary>
+			<returns></returns>
+			<example>fx = PlayLoopedFX( id, ent, tag );</example>
+			<param name="effectID">The effect id returned by loadfx</param>
+			<param name="repeatDelay">The delay between each loop.</param>
+			<param name="position">The world position of the effect</param>
+			<param opt="True" name="cullDistance">The culling distance of the effect. 0 means that the effect 
+won't be culled</param>
+			<param opt="True" name="forwardVector">The forward vector of the effect</param>
+			<param opt="True" name="upVector">The up vector of the effect</param>
+		</func>	
+		<func name="SpawnFx" access="Public">
+			<self></self>
+			<summary>Create an effect entity that can be re-triggered efficiently at arbitrary intervals. 
+This doesn't play the effect. Use delete to free it when done.</summary>
+			<returns></returns>
+			<example>fxObj = SpawnFx( fxId, pos, dir );</example>
+			<param name="effectID">The effect id returned by loadfx</param>
+			<param name="position">The world position of the effect</param>
+			<param name="forwardVector" opt="True">The forward vector of the effect</param>
+			<param name="upVector" opt="True">The up vector of the effect</param>
+		</func>	
+		<func name="TriggerFX" access="Public">
+			<self></self>
+			<summary>Replays the effect associated with the effect entity. This does not kill any existing effects.</summary>
+			<returns></returns>
+			<example>TriggerFX( fxObj, -5 );</example>
+			<param name="effectEntity">The effect id returned by loadfx.</param>
+			<param opt="True" name="when">The time at which the effect should be triggered. This can be in the past.</param>
+		</func>	
+		<func name="PhysicsExplosionSphere" access="Public">
+			<self></self>
+			<summary>Imparts a 1-frame explosion impulse on physics objects, similar to a grenade.</summary>
+			<returns></returns>
+			<example>PhysicsExplosionSphere( origin, 100, 80, 1 );</example>
+			<param name="position">The world position of the center of the explosion</param>
+			<param name="outerRadius">The radius beyond which the force is zero</param>
+			<param name="innerRadius">The radius within which the force is maximum</param>
+			<param name="magnitude">The strength of the force. 1 = the default explosion</param>
+		</func>	
+		<func name="PhysicsExplosionCylinder" access="Public">
+			<self></self>
+			<summary>Imparts a 1-frame impulse on physics objects radially outward in a cylinder (i.e., all the added 
+forces are parallel to the ground). This can be used to simulate wind from a helicopter.</summary>
+			<returns></returns>
+			<example>PhysicsExplosionCylinder( origin, 50, 40, 1 );</example>
+			<param name="position">The world position of the center of the explosion</param>
+			<param name="outerRadius">The radius beyond which the force is zero</param>
+			<param name="innerRadius">The radius within which the force is maximum</param>
+			<param name="magnitude">The strength of the force. 1 = the default explosion</param>
+		</func>	
+		<func name="PhysicsJolt" access="Public">
+			<self></self>
+			<summary>Imparts a 1-frame randomly-jittered impulse on physics objects in a radius.</summary>
+			<returns></returns>
+			<example></example>
+			<param name="position">The world position of the center of the explosion</param>
+			<param name="outerRadius">The radius beyond which the force is zero</param>
+			<param name="innerRadius">The radius within which the force is maximum</param>
+			<param name="force">A vector giving the direction and magnitude of the force of the explosion</param>
+		</func>	
+		<func name="PhysicsJitter" access="Public">
+			<self></self>
+			<summary>Jitters physics objects touching the ground. Jitter forces are calculated in such a way 
+as to displace the object upwards some height between min and max displacement 
+at each point of contact with the ground.</summary>
+			<returns></returns>
+			<example>PhysicsJitter( origin, 200, 150, 1.0, 5.0 );</example>
+			<param name="position">The world position of the center of the explosion</param>
+			<param name="outerRadius">The radius beyond which the force is zero</param>
+			<param name="innerRadius">The radius within which the force is maximum</param>
+			<param name="minDisplacement">Approximate minimum distance each contact point will be displaced</param>
+			<param name="maxDisplacement">Approximate maximum distance each contact point will be displaced</param>
+		</func>	
+		<func name="SetExpFog" access="Public">
+			<self></self>
+			<summary>Creates an exponential fog.</summary>
+			<returns></returns>
+			<example>SetExpFog( 0.0001144, 131/255, 116/255, 71/255, 0 );</example>
+			<param name="startDist">The distance, in world units, at which the fog begins.</param>
+			<param name="halfwayDist">The distance, beyond the startDist, at which the scene will be 50% fogged.</param>
+			<param name="red">The red component of the fog as a value between 0.0 and 1.0</param>
+			<param name="green">The green component of the fog as a value between 0.0 and 1.0</param>
+			<param name="blue">The blue component of the fog as a value between 0.0 and 1.0</param>
+			<param name="transitionTime">transition time in seconds</param>
+		</func>	
+		<func name="GrenadeExplosionEffect" access="Public">
+			<self></self>
+			<summary>Unknown</summary>
+			<returns></returns>
+			<example></example>
+			<param name="unknown"></param>
+		</func>	
+		<func name="RadiusDamage" access="Public">
+			<self>[Entity]</self>
+			<summary>Does damage to all damageable objects within a given radius. The amount of damage is linear 
+according to how close the object is to the radius. See also Entity/radiusdamage to specify an entity the damage 
+is coming from.</summary>
+			<returns></returns>
+			<example>RadiusDamage( level.player.origin, 500, max, min, attacker );</example>
+			<param name="origin">The centre of the damage.</param>
+			<param name="range">The radius of the damage done.</param>
+			<param name="maxDamage">The maximum damage done. This will be done to objects close to the origin</param>
+			<param name="minDamage">The minimum damage done. This will be done to objects at the edge of the damage sphere.</param>
+			<param opt="True" name="attacker">The attacker. Defaults to world.</param>
+		</func>	
+		<func name="SetPlayerIgnoreRadiusDamage" access="Public">
+			<self></self>
+			<summary>Sets the player to ignore radius damage</summary>
+			<returns></returns>
+			<example>SetPlayerIgnoreRadiusDamage( true );</example>
+			<param name="playerIgnoreRadiusDamage">Flag indicating whether the player is to ignore radius damage.</param>
+		</func>	
+		<func name="GetNumParts" access="Public">
+			<self></self>
+			<summary>Gets the number of bones in the xmodel.</summary>
+			<returns></returns>
+			<example></example>
+			<param name="xmodel">The model</param>
+		</func>	
+		<func name="GetPartName" access="Public">
+			<self></self>
+			<summary>Gets the name of a part of a model.</summary>
+			<returns></returns>
+			<example>partName = GetPartName( self.hatModel, 0 )</example>
+			<param name="xmodelName">The name of the model</param>
+			<param name="index">The part index. Must be less than the number of bones in the model.</param>
+		</func>	
+		<func name="Earthquake" access="Public">
+			<self></self>
+			<summary>Create an earthquake at the given point</summary>
+			<returns></returns>
+			<example>Earthquake( 0.3, 3, self.origin, 850 );</example>
+			<param name="scale">The scale of the quake.</param>
+			<param name="duration">Duration in seconds.</param>
+			<param name="source">The earthquake origin.</param>
+			<param name="radius">The earthquake radius of effect.</param>
+		</func>	
+		<func name="NewHudElem" access="Public">
+			<self></self>
+			<summary>Create a new hud element</summary>
+			<returns></returns>
+			<example>overlay = NewHudElem();</example>
+		</func>	
+		<func name="NewClientHudElem" access="Public">
+			<self></self>
+			<summary>Create a new hud element for a particular client</summary>
+			<returns></returns>
+			<example>self.kc_topbar = NewClientHudElem(self);</example>
+			<param name="client">The client for whom the hud element is created.</param>
+		</func>	
+		<func name="NewTeamHudElem" access="Public">
+			<self></self>
+			<summary>Create a new hud element for a particular team</summary>
+			<returns></returns>
+			<example>level.progressbar_allies_neutralize = NewTeamHudElem( "axis" );</example>
+			<param name="team">The team for whom the hud element is created. Must be 'axis', 'allies' or 'spectator'</param>
+		</func>	
+		<func name="ResetTimeout" access="Public">
+			<self></self>
+			<summary>Resets the infinite loop check timer, to prevent an incorrect infinite loop error when 
+a lot of script must be run</summary>
+			<returns></returns>
+			<example>ResetTimeout();</example>
+		</func>	
+		<func name="WeaponFireTime" access="Public">
+			<self></self>
+			<summary>Get the weapon fire time for the given weapon</summary>
+			<returns></returns>
+			<example>WeaponFireTime( "mosin_nagant_sniper" );</example>
+			<param name="weaponName">The weapon name.</param>
+		</func>	
+		<func name="IsWeaponClipOnly" access="Public">
+			<self></self>
+			<summary>Returns true if the weapon is clip only</summary>
+			<returns></returns>
+			<example>IsWeaponClipOnly( "c4" );</example>
+			<param name="weaponName">(string) The weapon name for this weapon.</param>
+		</func>	
+		<func name="IsWeaponDetonationTimed" access="Public">
+			<self></self>
+			<summary>Returns true if the weapon has timed detonation (e.g. frag/smoke grenades)</summary>
+			<returns></returns>
+			<example>IsWeaponDetonationTimed( "c4" );</example>
+			<param name="weaponName">(string) The weapon name for this weapon.</param>
+		</func>	
+		<func name="WeaponClipSize" access="Public">
+			<self></self>
+			<summary>Get the weapon clip size for the given weapon</summary>
+			<returns></returns>
+			<example>WeaponClipSize( "mosin_nagant_sniper" );</example>
+			<param name="weaponName">The weapon name.</param>
+		</func>	
+		<func name="WeaponIsSemiAuto" access="Public">
+			<self></self>
+			<summary>Get whether this weapon is semi automatic</summary>
+			<returns></returns>
+			<example>WeaponIsSemiAuto( "m14_scoped" );</example>
+			<param name="weaponName">The weapon name.</param>
+		</func>	
+		<func name="WeaponIsBoltAction" access="Public">
+			<self></self>
+			<summary>Get whether this weapon has a bolt action</summary>
+			<returns></returns>
+			<example>WeaponIsBoltAction( "m14_scoped" );</example>
+			<param name="weaponName">The weapon name.</param>
+		</func>	
+		<func name="WeaponType" access="Public">
+			<self></self>
+			<summary>Returns the type of weapon that this weapon is, such as "bullet", "projectile", "grenade", or "binoculars".</summary>
+			<returns></returns>
+			<example>if ( WeaponType( "mosin_nagant_sniper" ) == "bullet" ) ...</example>
+			<param name="weaponName">The weapon name.</param>
+		</func>	
+		<func name="WeaponClass" access="Public">
+			<self></self>
+			<summary>Returns the class of weapon that this weapon is, such as "rifle", "smg", "spread", "pistol", etc.</summary>
+			<returns></returns>
+			<example>if ( WeaponClass( "m16_basic" ) == "rifle" ) ...</example>
+			<param name="weaponName">The weapon name.</param>
+		</func>	
+		<func name="WeaponInventoryType" access="Public">
+			<self></self>
+			<summary>Returns the way this weapon is stored, such as "altmode", "item", "offhand", or "primary".</summary>
+			<returns></returns>
+			<example>if ( WeaponInventoryType( "rpg_mp" ) == "item" ) ...</example>
+			<param name="weaponName">The weapon name.</param>
+		</func>	
+		<func name="WeaponStartAmmo" access="Public">
+			<self></self>
+			<summary>Returns the amount of ammo this weapon is meant to start with when first given to a player.</summary>
+			<returns></returns>
+			<example>numrounds = WeaponStartAmmo( "mp5" )</example>
+			<param name="weaponName">The weapon name.</param>
+		</func>	
+		<func name="WeaponMaxAmmo" access="Public">
+			<self></self>
+			<summary>Returns the max amount of ammo this weapon is meant to hold. Stockpile only, not the clip.</summary>
+			<returns></returns>
+			<example>max = WeaponMaxAmmo( "mp5" )</example>
+			<param name="weaponName">The weapon name.</param>
+		</func>	
+		<func name="WeaponAltWeaponName" access="Public">
+			<self></self>
+			<summary>Returns the name of the weapon this weapon has for its alternate mode. Returns "none" if there 
+is no alt fire. Subsequent alternate weapons can be retrieved by calling the function again with the new weapon names 
+until it returns the original weapon.</summary>
+			<returns></returns>
+			<example>grenadeLauncherAttachment = WeaponAltWeaponName( "m16_gl_mp" )</example>
+			<param name="weaponName">The weapon name.</param>
+		</func>	
+		<func name="IsPlayer" access="Public">
+			<self></self>
+			<summary>Checks whether this entity is the player</summary>
+			<returns></returns>
+			<example>if ( IsPlayer( gun_owner ) ) ...</example>
+			<param name="entity">An entity object that may be the player</param>
+		</func>	
+		<func name="IsPlayerNumber" access="Public">
+			<self></self>
+			<summary>Returns true if the passed in int is a valid client number</summary>
+			<returns></returns>
+			<example></example>
+			<param name="entityNumber"></param>
+		</func>	
+		<func name="SetWinningPlayer" access="Public">
+			<self></self>
+			<summary>Sets a player to be the winner</summary>
+			<returns></returns>
+			<example></example>
+			<param name="player">The player to set as the winning player</param>
+		</func>	
+		<func name="SetWinningTeam" access="Public">
+			<self></self>
+			<summary>Sets a team to be the winner</summary>
+			<returns></returns>
+			<example></example>
+			<param name="team">The team name of the winning team. Must be 'axis', 'allies' or 'none'</param>
+		</func>	
+		<func name="Announcement" access="Public">
+			<self></self>
+			<summary>Sends an announcement to all clients. Supports localized strings and string formatting.</summary>
+			<returns></returns>
+			<example></example>
+			<param name="text">The announcement.</param>
+			<param opt="True" name="i1">Replace &amp;1</param>
+			<param opt="True" name="i2">Replace &amp;2</param>
+			<param opt="True" name="i3">Replace &amp;3</param>
+			<param opt="True" name="i4">Replace &amp;4</param>
+			<param opt="True" name="i5">Replace &amp;5</param>
+			<param opt="True" name="i6">Replace &amp;6</param>
+			<param opt="True" name="i7">Replace &amp;7</param>
+			<param opt="True" name="i8">Replace &amp;8</param>
+			<param opt="True" name="i9">Replace &amp;9</param>
+		</func>	
+		<func name="ClientAnnouncement" access="Public">
+			<self></self>
+			<summary>Sends an announcement to a single client. Supports localized strings and string formatting.</summary>
+			<returns></returns>
+			<example></example>
+			<param name="clientnum">The client number that the announcement is sent to</param>
+			<param name="text">The announcement.</param>
+			<param opt="True" name="i1">Replace &amp;1</param>
+			<param opt="True" name="i2">Replace &amp;2</param>
+			<param opt="True" name="i3">Replace &amp;3</param>
+			<param opt="True" name="i4">Replace &amp;4</param>
+			<param opt="True" name="i5">Replace &amp;5</param>
+			<param opt="True" name="i6">Replace &amp;6</param>
+			<param opt="True" name="i7">Replace &amp;7</param>
+			<param opt="True" name="i8">Replace &amp;8</param>
+			<param opt="True" name="i9">Replace &amp;9</param>
+		</func>	
+		<func name="GetTeamScore" access="Public">
+			<self></self>
+			<summary>Get a team's score</summary>
+			<returns></returns>
+			<example>if ( GetTeamScore( "allies" ) > getTeamScore("axis") ) ...</example>
+			<param name="team">The name of a team. Must be either 'axis' or 'allies'</param>
+		</func>	
+		<func name="SetTeamScore" access="Public">
+			<self></self>
+			<summary>Set a team's score</summary>
+			<returns></returns>
+			<example>SetTeamScore( "allies", 100 )</example>
+			<param name="team">The name of a team. Must be either 'axis' or 'allies'</param>
+			<param name="score">The new team score</param>
+		</func>	
+		<func name="SetClientNameMode" access="Public">
+			<self></self>
+			<summary>alters the way that the player name is updated, to prevent cheating by spectators altering 
+their name to communicate with active players.</summary>
+			<returns></returns>
+			<example>SetClientNameMode( "auto_change" );</example>
+			<param name="nameMode">either 'auto_change' or 'manual_change'</param>
+		</func>	
+		<func name="UpdateClientNames" access="Public">
+			<self></self>
+			<summary>Update all of the client names: only works in 'manual_change' mode</summary>
+			<returns></returns>
+			<example></example>
+		</func>	
+		<func name="GetTeamPlayersAlive" access="Public">
+			<self></self>
+			<summary>Returns the number of players still alive on a given team</summary>
+			<returns></returns>
+			<example></example>
+			<param name="team">A string value, either 'axis' or 'allies'</param>
+		</func>	
+		<func name="Objective_Team" access="Public">
+			<self></self>
+			<summary>Sets the team that the objective is for. Allows having different objectives for each team</summary>
+			<returns></returns>
+			<example>Objective_Team( 0, "allies" );</example>
+			<param name="objective_number">The ID of the objective to alter</param>
+			<param name="team">The team that the objective is for. Valid entries are 'allies', 'axis', or 'none'</param>
+		</func>	
+		<func name="LogPrint" access="Public">
+			<self></self>
+			<summary>Prints to the server log file.</summary>
+			<returns></returns>
+			<example></example>
+			<param name="string">The string to write to the log file.</param>
+		</func>	
+		<func name="WorldEntNumber" access="Public">
+			<self></self>
+			<summary>Returns the entity number for the world</summary>
+			<returns></returns>
+			<example></example>
+		</func>	
+		<func name="Obituary" access="Public">
+			<self></self>
+			<summary>Create an obituary for a character</summary>
+			<returns></returns>
+			<example>Obituary( self, attacker, sWeapon, sMeansOfDeath );</example>
+			<param name="victim">The victim entity</param>
+			<param name="attacker">The attacker entity</param>
+			<param name="weapon">The weapon name</param>
+			<param name="meansOfDeath">The means of death as a string</param>
+		</func>	
+		<func name="PositionWouldTelefrag" access="Public">
+			<self></self>
+			<summary>Returns true if the passed in origin would telefrag a player if another player was spawned there.</summary>
+			<returns></returns>
+			<example>if ( PositionWouldTelefrag( spawnpoints[i].origin ) ) ...</example>
+			<param name="position">The position of the potential spawn point</param>
+		</func>	
+		<func name="GetStartTime" access="Public">
+			<self></self>
+			<summary>Returns the start time for the current round.</summary>
+			<returns></returns>
+			<example>GetStartTime();</example>
+		</func>	
+		<func name="PrecacheMenu" access="Public">
+			<self></self>
+			<summary>precache this menu</summary>
+			<returns></returns>
+			<example>PrecacheMenu( game["menu_serverinfo"] );</example>
+			<param name="menu">The menu to load</param>
+		</func>	
+		<func name="PreCacheStatusIcon" access="Public">
+			<self></self>
+			<summary>precache a status icon.</summary>
+			<returns></returns>
+			<example>PreCacheStatusIcon( "hud_status_dead" );</example>
+			<param name="statusIconName">the name of the status icon</param>
+		</func>	
+		<func name="PreCacheHeadIcon" access="Public">
+			<self></self>
+			<summary>precache a head icon.</summary>
+			<returns></returns>
+			<example>PreCacheHeadIcon( game["headicon_allies"] );</example>
+			<param name="headIconName">The name of the head icon</param>
+		</func>	
+		<func name="PreCacheLocationSelector" access="Public">
+			<self></self>
+			<summary>precaches a material to be used as an indicator during location selection on the map.</summary>
+			<returns></returns>
+			<example>PreCacheLocationSelector( "map_crosshair" );</example>
+			<param name="materialName">The name of the material to be precached</param>
+		</func>	
+		<func name="Map_Restart" access="Public">
+			<self></self>
+			<summary>Restarts the map</summary>
+			<returns></returns>
+			<example>Map_Restart( true );</example>
+			<param name="savePersistent">if true then player info is retained</param>
+		</func>	
+		<func name="ExitLevel" access="Public">
+			<self></self>
+			<summary>exits the current level</summary>
+			<returns></returns>
+			<example>ExitLevel( false );</example>
+			<param name="savePersistent">if true then player info is retained</param>
+		</func>	
+		<func name="AddTestClient" access="Public">
+			<self></self>
+			<summary>Adds a test client to the map and returns a reference to that client.</summary>
+			<returns></returns>
+			<example>ent[i] = AddTestClient();</example>
+		</func>	
+		<func name="MakeDvarServerInfo" access="Public">
+			<self></self>
+			<summary>Flags a dvar with the DVAR_CODINFO flag</summary>
+			<returns></returns>
+			<example>MakeDvarServerInfo( "ui_ctf_timelimit", "30" );</example>
+			<param name="dvarName">The name of the dvar to change</param>
+			<param name="dvarValue" opt="True">The new value of the dvar</param>
+		</func>	
+		<func name="SetArchive" access="Public">
+			<self></self>
+			<summary>deprecated function, does nothing</summary>
+			<returns></returns>
+			<example></example>
+			<param name="archive"></param>
+		</func>	
+		<func name="AllClientsPrint" access="Public">
+			<self></self>
+			<summary>Cause all clients to print the localized version of this string.</summary>
+			<returns></returns>
+			<example>AllClientsPrint( "Game Complete" );</example>
+			<param name="string">A message to print.</param>
+		</func>	
+		<func name="ClientPrint" access="Public">
+			<self></self>
+			<summary>Print a string for a given client.</summary>
+			<returns></returns>
+			<example></example>
+			<param name="client">A client entity.</param>
+			<param name="string">A message to print.</param>
+		</func>	
+		<func name="MapExists" access="Public">
+			<self></self>
+			<summary>Returns true if the map with the given name exists on the server</summary>
+			<returns></returns>
+			<example></example>
+			<param name="mapName">The map to check.</param>
+		</func>	
+		<func name="IsValidGametype" access="Public">
+			<self></self>
+			<summary>Returns true if the string is a valid game type</summary>
+			<returns></returns>
+			<example></example>
+			<param name="gameType">a string to check</param>
+		</func>	
+		<func name="MatchEnd" access="Public">
+			<self></self>
+			<summary>Unknown</summary>
+			<returns></returns>
+			<example></example>
+			<param name="unknown"></param>
+		</func>	
+		<func name="SetPlayerTeamRank" access="Public">
+			<self></self>
+			<summary>Using on XBOX</summary>
+			<returns></returns>
+			<example></example>
+			<param name="player"></param>
+			<param name="unknown"></param>
+			<param name="score"></param>
+		</func>	
+		<func name="SendRanks" access="Public">
+			<self></self>
+			<summary>Unknown</summary>
+			<returns></returns>
+			<example></example>
+		</func>	
+		<func name="EndParty" access="Public">
+			<self></self>
+			<summary>Unknown</summary>
+			<returns></returns>
+			<example></example>
+		</func>	
+		<func name="SetTeamRadar" access="Public">
+			<self></self>
+			<summary>Sets whether a team has radar or not</summary>
+			<returns></returns>
+			<example>SetTeamRadar( "allies", true )</example>
+			<param name="team">The name of a team. Must be either Must be 'axis', 'allies' or 'none'.</param>
+			<param name="availability">Whether the team has radar; defaults to false</param>
+		</func>	
+		<func name="GetTeamRadar" access="Public">
+			<self></self>
+			<summary>Gets whether a team has radar or not</summary>
+			<returns></returns>
+			<example>GetTeamRadar( "allies" )</example>
+			<param name="team">The name of a team. Must be either Must be 'axis', 'allies' or 'none'.</param>
+		</func>	
+		<func name="GetAssignedTeam" access="Public">
+			<self></self>
+			<summary>returns the player's team as assigned by matchmaking. 0 = No Team, 1 = OpFor, 2 = Allies, 3 = Spectator.</summary>
+			<returns></returns>
+			<example>team = GetAssignedTeam( player );</example>
+			<param name="player">The player </param>
+		</func>	
+		<func name="SetVoteString" access="Public">
+			<self></self>
+			<summary>Sets the string for a vote</summary>
+			<returns></returns>
+			<example></example>
+			<param name="string">The vote string</param>
+		</func>	
+		<func name="SetVoteTime" access="Public">
+			<self></self>
+			<summary>Sets the start time for a vote</summary>
+			<returns></returns>
+			<example></example>
+			<param name="time">The vote time in ms</param>
+		</func>	
+		<func name="SetVoteYesCount" access="Public">
+			<self></self>
+			<summary>Sets the number of Yes votes</summary>
+			<returns></returns>
+			<example></example>
+			<param name="count">Number of 'yes' votes</param>
+		</func>	
+		<func name="SetVoteNoCount" access="Public">
+			<self></self>
+			<summary>Sets the number of No votes</summary>
+			<returns></returns>
+			<example></example>
+			<param name="count">Number of 'no' votes</param>
+		</func>	
+		<func name="Kick" access="Public">
+			<self></self>
+			<summary>Kicks the specified player.</summary>
+			<returns></returns>
+			<example></example>
+			<param name="clientnum">The client number of the player to kick.</param>
+		</func>	
+		<func name="Ban" access="Public">
+			<self></self>
+			<summary>Bans the specified player. </summary>
+			<returns></returns>
+			<example></example>
+			<param name="clientnum">The client number of the player to ban.</param>
+		</func>	
+		<func name="Map" access="Public">
+			<self></self>
+			<summary>Loads a new map</summary>
+			<returns></returns>
+			<example></example>
+			<param name="mapName">The map to load</param>
+			<param name="savePersistent">if true then player info is retained</param>
+		</func>	
+		<func name="PlayRumbleOnPosition" access="Public">
+			<self></self>
+			<summary>Plays a rumble at a given position.</summary>
+			<returns></returns>
+			<example>PlayRumbleOnPosition( "artillery_quake", level.player.origin );</example>
+			<param name="rumbleName">The name of the rumble to play</param>
+			<param name="position">The position of the rumble</param>
+		</func>	
+		<func name="PlayRumbleLoopOnPosition" access="Public">
+			<self></self>
+			<summary>Plays a looping rumble at a given position.</summary>
+			<returns></returns>
+			<example>PlayRumbleLoopOnPosition( "artillery_quake", level.player.origin );</example>
+			<param name="rumbleName">The name of the rumble to play</param>
+			<param name="position">The position of the rumble</param>
+		</func>	
+		<func name="StopAllRumbles" access="Public">
+			<self></self>
+			<summary>Stops all of the current rumbles.</summary>
+			<returns></returns>
+			<example>StopAllRumbles();</example>
+		</func>	
+		<func name="SoundExists" access="Public">
+			<self></self>
+			<summary>Returns true if the sound alias exists</summary>
+			<returns></returns>
+			<example>if ( SoundExists( "Dirt_skid", "skidsound", true ) ) { ... }</example>
+			<param name="aliasname">The sound alias to play</param>
+		</func>	
+		<func name="IsSplitScreen" access="Public">
+			<self></self>
+			<summary>Returns true if the game is a splitscreen game</summary>
+			<returns></returns>
+			<example>level.splitscreen = IsSplitScreen()</example>
+		</func>	
+		<func name="SetMiniMap" access="Public">
+			<self></self>
+			<summary>Sets the info for the satelite map on the compass.</summary>
+			<returns></returns>
+			<example>SetMiniMap( "compass_map_default", 12672, 5824, -4224, -11072 );</example>
+			<param name="materialName">The name of the satelite map material</param>
+			<param name="upperLeftX">X-coordinate of the world location of the upper-left corner of the material</param>
+			<param name="upperLeftY">Y-coordinate of the world location of the upper-left corner of the material</param>
+			<param name="lowerRightX">X-coordinate of the world location of the lower-right corner of the material</param>
+			<param name="lowerRightY">Y-coordinate of the world location of the lower-right corner of the material</param>
+		</func>	
+		<func name="SetMapCenter" access="Public">
+			<self></self>
+			<summary>Set the center of the map (used by the network code to optimize position data) </summary>
+			<returns></returns>
+			<example></example>
+			<param name="name"></param>
+		</func>	
+		<func name="SetGameEndTime" access="Public">
+			<self></self>
+			<summary>Sets the time the current match will end</summary>
+			<returns></returns>
+			<example></example>
+			<param name="endTime">Time in ms</param>
+		</func>	
+		<func name="GetArrayKeys" access="Public">
+			<self></self>
+			<summary>Returns an array consisting of the keys of the input array.</summary>
+			<returns>Array of keys</returns>
+			<example>result = GetArrayKeys( array );</example>
+			<param name="array">Input array</param>
+		</func>	
+		<func name="SearchForOnlineGames" access="Public">
+			<self></self>
+			<summary>Unknown</summary>
+			<returns></returns>
+			<example></example>
+			<param name="unknown"></param>
+		</func>	
+		<func name="QuitLobby" access="Public">
+			<self></self>
+			<summary>Unknown</summary>
+			<returns></returns>
+			<example></example>
+			<param name="unknown"></param>
+		</func>	
+		<func name="quitparty" access="Public">
+			<self></self>
+			<summary>Unknown</summary>
+			<returns></returns>
+			<example></example>
+			<param name="unknown"></param>
+		</func>	
+		<func name="startparty" access="Public">
+			<self></self>
+			<summary>Unknown</summary>
+			<returns></returns>
+			<example></example>
+			<param name="unknown"></param>
+		</func>	
+		<func name="startprivatematch" access="Public">
+			<self></self>
+			<summary>Unknown</summary>
+			<returns></returns>
+			<example></example>
+			<param name="unknown"></param>
+		</func>	
+		<func name="VisionSetNaked" access="Public">
+			<self></self>
+			<summary>Sets players' naked-eye vision. Optionally give a transition time from the current vision.</summary>
+			<returns></returns>
+			<example>VisionSetNaked( "armada", 1.5 );</example>
+			<param name="visionName">Vision to transition to.</param>
+			<param opt="True" name="transitionTime">How long, in seconds, to take transitioning to the new vision 
+set if a transition is possible. Default is one second.</param>
+		</func>	
+		<func name="VisionSetNight" access="Public">
+			<self></self>
+			<summary>Sets the vision preset to use for players' night vision view.</summary>
+			<returns></returns>
+			<example>VisionSetNight( "armada_nvg", 1.5 );</example>
+			<param name="visionName">Vision to transition to.</param>
+			<param opt="True" name="transitionTime">How long, in seconds, to take transitioning to the new vision 
+set if a transition is possible. Default is one second.</param>
+		</func>	
+		<func name="TableLookup" access="Public">
+			<self></self>
+			<summary>look up a row in a table and pull out a particular column from that row</summary>
+			<returns></returns>
+			<example>TableLookup( "mp/statstable.csv", 0, "INDEX_KILLS", 1 );</example>
+			<param name="filename">The table to look up</param>
+			<param name="searchColumnNum">The column number of the stats table to search through</param>
+			<param name="searchValue">The value to use when searching the searchColumnNum</param>
+			<param name="returnValueColumnNum">The column number value to return after we find the correct row</param>
+		</func>	
+		<func name="TableLookupIString" access="Public">
+			<self></self>
+			<summary>Look up a row in a table and pull out a particular column from that row in an Istring</summary>
+			<returns></returns>
+			<example>TableLookupIString( "mp/statstable.csv", 0, "INDEX_KILLS", 1 );</example>
+			<param name="fileName">The table to look up</param>
+			<param name="searchColumnNum">The column number of the stats table to search through</param>
+			<param name="searchValue">The value to use when searching the searchColumnNum</param>
+			<param name="returnValueColumnNum">The column number value to return after we find the correct row</param>
+		</func>	
+		<func name="EndLobby" access="Public">
+			<self></self>
+			<summary>Unknnown</summary>
+			<returns></returns>
+			<example></example>
+		</func>	
+		<!-- LEVEL FUNCTIONS -->
+		<!-- PLAYER CMD -->
+		<func name="GiveWeapon" access="Public">
+			<self>Player</self>
+			<summary>Give the player a weapon</summary>
+			<returns></returns>
+			<example>level.player GiveWeapon( "m1garand", 0 );</example>
+			<param name="weaponName">The weapon name to give to the player</param>
+			<param opt="True" name="modelVariant">Index of the model variant (0-15). defaults to 0.</param>
+		</func>	
+		<func name="TakeWeapon" access="Public">
+			<self>Player</self>
+			<summary>Take a weapon from the player.</summary>
+			<returns></returns>
+			<example>level.player TakeWeapon( "m16_grenadier" );</example>
+			<param name="weaponName">The weapon name to take from the player</param>
+		</func>	
+		<func name="TakeAllWeapons" access="Public">
+			<self>Player</self>
+			<summary>Remove all the weapons from the player.</summary>
+			<returns></returns>
+			<example>level.player TakeAllWeapons();</example>
+		</func>		
+		<func name="GetCurrentWeapon" access="Public">
+			<self>Player</self>
+			<summary>Gets the players current weapon.</summary>
+			<returns>String - weapon name</returns>
+			<example>currentweapon = level.player GetCurrentWeapon();</example>
+		</func>	
+		<func name="GetCurrentOffhand" access="Public">
+			<self>Player</self>
+			<summary>Gets the player's current off-hand weapon( usually a grenade).</summary>
+			<returns></returns>
+			<example>currentweapon = level.player GetCurrentOffhand();</example>
+		</func>	
+		<func name="HasWeapon" access="Public">
+			<self>Player</self>
+			<summary>Checks whether the player has the given weapon.</summary>
+			<returns>Bool</returns>
+			<example> if( level.player HasWeapon( "Panzerfaust" ) ) [...]</example>
+			<param name="weaponName">The weapon name (a string)</param>
+		</func>		
+		<func name="SwitchToWeapon" access="Public">
+			<self>Player</self>
+			<summary>Switch to a different weapon</summary>
+			<returns></returns>
+			<example>level.player SwitchToWeapon( "mosin_nagant" );</example>
+			<param name="weaponName">The weapon name (a string)</param>
+		</func>	
+		<func name="SwitchToOffhand" access="Public">
+			<self>Player</self>
+			<summary>Switch the player's offhand weapon</summary>
+			<returns></returns>
+			<example></example>
+			<param name="weaponName">The weapon name (a string)</param>
+		</func>	
+		<func name="GiveStartAmmo" access="Public">
+			<self>Player</self>
+			<summary>Set the player's ammunition to the weapon's default starting ammunition</summary>
+			<returns></returns>
+			<example></example>
+			<param name="weaponName">The weapon name (a string)</param>
+		</func>		
+		<func name="GiveMaxAmmo" access="Public">
+			<self>Player</self>
+			<summary>Set the player's ammunition to the weapon's maximum ammunition</summary>
+			<returns></returns>
+			<example>self GiveMaxAmmo( self.pers["weapon"] );</example>
+			<param name="weaponName">The weapon name (a string)</param>
+		</func>	
+		<func name="GetFractionStartAmmo" access="Public">
+			<self>Player</self>
+			<summary>Return the player's current ammunition amount as a fraction of the weapon's starting ammunition</summary>
+			<returns></returns>
+			<example>self GetFractionStartAmmo( "mosin_nagant" );</example>
+			<param name="weaponName">The weapon name (a string)</param>
+		</func>	
+		<func name="GetFractionMaxAmmo" access="Public">
+			<self>Player</self>
+			<summary>Return the player's current ammunition amount as a fraction of the weapon's maximum ammunition</summary>
+			<returns></returns>
+			<example>self GetFractionMaxAmmo( "m4_grenadier" );</example>
+			<param name="weaponName">The weapon name (a string)</param>
+		</func>		
+		<func name="SetOrigin" access="Public">
+			<self>Player</self>
+			<summary>Set the player's origin</summary>
+			<returns></returns>
+			<example>level.player SetOrigin( pltruck.origin );</example>
+			<param name="position">The player's origin (a point)</param>
+		</func>	
+		<func name="GetVelocity" access="Public">
+			<self>Player</self>
+			<summary>Gets the player's velocity</summary>
+			<returns>Vector</returns>
+			<example>vel = level.player GetVelocity();</example>
+		</func>	
+		<func name="SetPlayerAngles" access="Public">
+			<self>Player</self>
+			<summary>Set the player's angles</summary>
+			<returns></returns>
+			<example>level.player SetPlayerAngles( (0, 240, 0) );</example>
+			<param name="angles">The player's angles in degrees.</param>
+		</func>		
+		<func name="GetPlayerAngles" access="Public">
+			<self>Player</self>
+			<summary>Get the player's angles</summary>
+			<returns>Vector</returns>
+			<example>angles = level.player GetPlayerAngles();</example>
+		</func>	
+		<func name="UseButtonPressed" access="Public">
+			<self>Player</self>
+			<summary></summary>
+			<returns>Bool</returns>
+			<example>if ( self UseButtonPressed() ) ...</example>
+		</func>	
+		<func name="AttackButtonPressed" access="Public">
+			<self>Player</self>
+			<summary></summary>
+			<returns>Bool</returns>
+			<example>if ( self AttackButtonPressed() ) ...</example>
+		</func>		
+		<func name="AdsButtonPressed" access="Public">
+			<self>Player</self>
+			<summary>Check if the player is pressing the 'ads' button.</summary>
+			<returns>Bool</returns>
+			<example>while( self AdsButtonPressed() )...</example>
+		</func>	
+		<func name="MeleeButtonPressed" access="Public">
+			<self>Player</self>
+			<summary></summary>
+			<returns>Bool</returns>
+			<example>if ( self MeleeButtonPressed() ) ...</example>
+		</func>	
+		<func name="FragButtonPressed" access="Public">
+			<self>Player</self>
+			<summary></summary>
+			<returns>Bool</returns>
+			<example>if ( self FragButtonPressed() ) ...</example>
+		</func>		
+		<func name="SecondaryOffhandButtonPressed" access="Public">
+			<self>Player</self>
+			<summary></summary>
+			<returns>Bool</returns>
+			<example>if ( self SecondaryOffhandButtonPressed() ) ...</example>
+		</func>	
+		<func name="PlayerAds" access="Public">
+			<self>Player</self>
+			<summary>Return the player's weapon position fraction.</summary>
+			<returns></returns>
+			<example>while( self PlayerAds() > 0.3 )...</example>
+		</func>	
+		<func name="IsOnGround" access="Public">
+			<self>Player</self>
+			<summary>Returns true if the player is on the ground.</summary>
+			<returns>Bool</returns>
+			<example>if( player IsOnGround() );</example>
+		</func>		
+		<func name="PingPlayer" access="Public">
+			<self>Player</self>
+			<summary>Flashes a player on their teammate's compasses</summary>
+			<returns></returns>
+			<example>self PingPlayer();</example>
+		</func>	
+		<func name="SetViewModel" access="Public">
+			<self>Player</self>
+			<summary>Set the player's current view model.</summary>
+			<returns></returns>
+			<example>self SetViewModel( "viewmodel_hands_russian_vetrn" );</example>
+			<param name="viewmodelName">A viewmodel (string)</param>
+		</func>	
+		<func name="GetViewModel" access="Public">
+			<self>Player</self>
+			<summary>Get the viewmodel name for the given player</summary>
+			<returns>String</returns>
+			<example>info["viewmodel"] = self GetViewModel();</example>
+		</func>		
+		<func name="SetOffhandSecondaryClass" access="Public">
+			<self>Player</self>
+			<summary>Set whether player can use smoke grenades or flashbangs.</summary>
+			<returns></returns>
+			<example>level.player SetOffhandSecondaryClass( "flash" );</example>
+			<param name="name">Either "smoke" or "flash"</param>
+		</func>	
+		<func name="GetOffhandSecondaryClass" access="Public">
+			<self>Player</self>
+			<summary>Gets the name (either "smoke" or "flash") that toggle is set to.</summary>
+			<returns>String</returns>
+			<example>if ( "flash" == level.player GetOffhandSecondaryClass() )...</example>
+		</func>	
+		<func name="BeginLocationSelection" access="Public">
+			<self>Player</self>
+			<summary>Causes the player to begin selecting a location. A map HUD element should be visible 
+for them to see where they're selecting. Works with endlocationselection(). When the user 
+confirms or cancels, they will recieve a notify "confirm_location" or "cancel_location". 
+The former notify contains the location they selected, as a vector.</summary>
+			<returns></returns>
+			<example>self BeginLocationSelection( "map_crosshair", 0.1); self waittill("confirm_location", loc );</example>
+			<param name="locationSelector">Name of the material to use as a cursor on the map. Must be precached 
+with precacheLocationSelector()</param>
+			<param name="selectorSize">The radius of the cursor material in world units. Cannot be larger than the entire 
+south-to-north span of the minimap. If not specified, will be 15% of the south-to-north span of the minimap.</param>
+		</func>		
+		<func name="EndLocationSelection" access="Public">
+			<self>Player</self>
+			<summary>Causes the player to leave location selection mode. Works with beginlocationselection().</summary>
+			<returns></returns>
+			<example>self EndLocationSelection();</example>
+		</func>	
+		<func name="ButtonPressed" access="Public">
+			<self>Player - it will only check the host player's buttons though</self>
+			<summary>Check if the host is pressing the button/key, "BUTTON_A", "BUTTON_B", "K</summary>
+			<returns></returns>
+			<example>while( self ButtonPressed( "BUTTON_A" ) ) ...</example>
+			<param name="buttonName"></param>
+		</func>	
+		<func name="SayAll" access="Public">
+			<self>Player</self>
+			<summary>Write a client chat message from this client to everybody </summary>
+			<returns></returns>
+			<example>self SayAll( saytext );</example>
+			<param name="message">A localizable message to send to all players</param>
+		</func>		
+		<func name="SayTeam" access="Public">
+			<self>Player</self>
+			<summary>Write a client chat message from this client to everybody on their team</summary>
+			<returns></returns>
+			<example>self SayTeam( sayText );</example>
+			<param name="message">A localizable message to send to all players on the player's team.</param>
+		</func>	
+		<func name="ShowScoreBoard" access="Public">
+			<self>Player</self>
+			<summary>Updates the scoreboard data on a given client if they are looking at it.</summary>
+			<returns></returns>
+			<example></example>
+		</func>	
+		<func name="SetSpawnWeapon" access="Public">
+			<self>Player</self>
+			<summary>Set the weapon that this player will spawn with</summary>
+			<returns></returns>
+			<example>self SetSpawnWeapon( "ak47" );</example>
+			<param name="weaponName">The name of the weapon to spawn with</param>
+		</func>		
+		<func name="DropItem" access="Public">
+			<self>Player</self>
+			<summary>Drop an item with the given item name</summary>
+			<returns></returns>
+			<example>self DropItem( current );</example>
+			<param name="itemName">the name of the item to drop</param>
+		</func>	
+		<func name="FinishPlayerDamage" access="Public">
+			<self>Player</self>
+			<summary>Does damage to a player - usually as part of the damage callback</summary>
+			<returns></returns>
+			<example>self FinishPlayerDamage(eInflictor, eAttacker, iDamage, iDFlags, sMeansOfDeath, sWeapon, vPoint, vDir, sHitLoc, psOffsetTime);</example>
+			<param name="eInflictor">The entity that causes the damage.(e.g. a turret)</param>
+			<param name="eAttacker">The entity that is attacking.</param>
+			<param name="iDamage">Integer specifying the amount of damage done</param>
+			<param name="iDFlags">Integer specifying flags that are to be applied to the damage</param>
+			<param name="sMeansOfDeath">Integer specifying the method of death</param>
+			<param name="sWeapon">The weapon number of the weapon used to inflict the damage</param>
+			<param name="vPoint">(vector) The position of the damage</param>
+			<param name="vDir">(vector) The direction of the damage</param>
+			<param name="sHitLoc">The location of the hit</param>
+			<param name="psOffsetTime">The time offset for the damage</param>
+		</func>	
+		<func name="Suicide" access="Public">
+			<self>Player</self>
+			<summary>Kills the player immediately as a suicide</summary>
+			<returns></returns>
+			<example>self suicide();</example>
+		</func>		
+		<func name="OpenMenu" access="Public">
+			<self>Player</self>
+			<summary>Open a menu for this player</summary>
+			<returns></returns>
+			<example>self OpenMenu( game["menu_weapon_allies_only"] );</example>
+			<param name="menu">A string. The name of the menu to open</param>
+		</func>	
+		<func name="OpenMenuNoMouse" access="Public">
+			<self>Player</self>
+			<summary>Open a menu for this player, with no mouse control.</summary>
+			<returns></returns>
+			<example>self OpenMenuNoMouse( game["menu_weapon_allies_only"] );</example>
+			<param name="menu">A string. The name of the menu to open</param>
+		</func>	
+		<func name="CloseMenu" access="Public">
+			<self>Player</self>
+			<summary>Close the current player menu</summary>
+			<returns></returns>
+			<example>player CloseMenu();</example>
+			<param opt="True" name="menuName"></param>
+		</func>		
+		<func name="CloseInGameMenu" access="Public">
+			<self>Player</self>
+			<summary>close the in game menu for this client. </summary>
+			<returns></returns>
+			<example>player CloseInGameMenu();</example>
+			<param opt="True" name="menuName"></param>
+		</func>	
+		<func name="FreezeControls" access="Public">
+			<self>Player</self>
+			<summary>Blocks or unblocks control input from this player</summary>
+			<returns></returns>
+			<example>level.player freezeControls( true );</example>
+			<param name="freezeState">true if the player's controls are frozen, false otherwise.</param>
+		</func>	
+		<func name="DisableWeapons" access="Public">
+			<self>Player</self>
+			<summary>Disable the player's weapon</summary>
+			<returns></returns>
+			<example>level.player DisableWeapons();</example>
+		</func>		
+		<func name="EnableWeapons" access="Public">
+			<self>Player</self>
+			<summary>Enable the player's weapons</summary>
+			<returns></returns>
+			<example>level.player EnableWeapons();</example>
+		</func>	
+		<func name="SetReverb" access="Public">
+			<self>Player</self>
+			<summary>Set the sound reverberation for the player</summary>
+			<returns></returns>
+			<example>level.player SetReverb( "snd_enveffectsprio_level", "stoneroom", 1, .7, 3 );</example>
+			<param name="priority">Valid priorities are "snd_enveffectsprio_level", or "snd_enveffectsprio_shellshock".</param>
+			<param name="roomType">string describing the type of reverb.</param>
+			<param name="dryLevel">a float from 0 (no source sound) to 1 (full source sound)</param>
+			<param name="wetLevel">a float from 0 (no effect) to 1 (full effect)</param>
+			<param name="fadeTime">in seconds and modifies drylevel and wetlevel.</param>
+		</func>	
+		<func name="DeactivateReverb" access="Public">
+			<self>Player</self>
+			<summary>deactivate the sound reverberation for the player on the given priority level</summary>
+			<returns></returns>
+			<example>level.player DeactivateReverb( "snd_enveffectsprio_level", 3 );</example>
+			<param name="priority">Valid priorities are "snd_enveffectsprio_level" or "snd_enveffectsprio_shellshock".</param>
+			<param name="fadeTime">the time spent fading to the next lowest active reverb priority level in seconds.</param>
+		</func>		
+		<func name="SetChannelVolumes" access="Public">
+			<self>Player</self>
+			<summary>Set the channel volumes for the player (a way of fading volumes by type)</summary>
+			<returns></returns>
+			<example>level.player SetChannelVolumes( "snd_channelvolprio_pain", "pain", 1, .7, 3 );</example>
+			<param name="priority">Valid priorities are "snd_channelvolprio_holdbreath", "snd_channelvolprio_pain", 
+or "snd_channelvolprio_shellshock".</param>
+			<param name="shockName">string describing the name of the .shock file w/ the channel volumes values to use.</param>
+			<param name="fadeTime">in seconds.</param>
+		</func>	
+		<func name="DeactivateChannelVolumes" access="Public">
+			<self>Player</self>
+			<summary>deactivate the channel volumes for the player on the given priority level</summary>
+			<returns></returns>
+			<example>level.player DeactivateChannelVolumes( "snd_enveffectsprio_level", 3 );</example>
+			<param name="priority">Valid priorities are "snd_channelvolprio_holdbreath", "snd_channelvolprio_pain", 
+or "snd_channelvolprio_shellshock".</param>
+			<param name="fadeTime">the time spent fading to the next lowest active channelvol priority level in seconds.</param>
+		</func>	
+		<func name="SetWeaponAmmoClip" access="Public">
+			<self>Player</self>
+			<summary>Set the weapon clip ammunition for the given weapon.</summary>
+			<returns></returns>
+			<example>level.player SetWeaponAmmoClip( "m16", 30 );</example>
+			<param name="weaponName">(string) The weapon name for this weapon.</param>
+			<param name="ammunition">(integer) The amount of ammunition in the clip.</param>
+		</func>		
+		<func name="SetWeaponAmmoStock" access="Public">
+			<self>Player</self>
+			<summary>Set the ammunition stockpile for the given weapon.</summary>
+			<returns></returns>
+			<example>level.player SetWeaponAmmoStock( "m16", 300 );</example>
+			<param name="weaponName">(string) The weapon name for this weapon.</param>
+			<param name="ammunition">(integer) The amount of ammunition in the stockpile.</param>
+		</func>	
+		<func name="GetWeaponAmmoClip" access="Public">
+			<self>Player</self>
+			<summary>Get the amount of ammo left in the player's weapon's current clip.</summary>
+			<returns></returns>
+			<example>clipCount = level.player GetWeaponAmmoClip( "uzi" );</example>
+			<param name="weaponName">(string) The weapon name for this weapon.</param>
+		</func>	
+		<func name="GetWeaponAmmoStock" access="Public">
+			<self>Player</self>
+			<summary>Get the ammunition stockpile for the given weapon.</summary>
+			<returns></returns>
+			<example>clipCount = level.player GetWeaponAmmoStock( "m4_grenadier" );</example>
+			<param name="weaponName">(string) The weapon name for this weapon.</param>
+		</func>		
+		<func name="AnyAmmoForWeaponModes" access="Public">
+			<self>Player</self>
+			<summary>Returns true if the player has any ammo available for the weapon or any of it's alt-modes 
+(grenade launcher, etc).</summary>
+			<returns></returns>
+			<example>if ( level.player AnyAmmoForWeaponModes( "m4_grenadier" ) ) [...]</example>
+			<param name="weaponName">(string) The weapon name for this weapon.</param>
+		</func>	
+		<func name="IPrintLn" access="Public">
+			<self>[Player]</self>
+			<summary>Write line to the screen. Supports localized strings and string formating.</summary>
+			<returns></returns>
+			<example>IPrintLn( "Where have all the cowboys gone?" );</example>
+			<param name="text">text to be written</param>
+			<param opt="True" name="i1">Replace &amp;&amp;1</param>
+			<param opt="True" name="i2">Replace &amp;&amp;2</param>
+			<param opt="True" name="i3">Replace &amp;&amp;3</param>
+			<param opt="True" name="i4">Replace &amp;&amp;4</param>
+			<param opt="True" name="i5">Replace &amp;&amp;5</param>
+			<param opt="True" name="i6">Replace &amp;&amp;6</param>
+			<param opt="True" name="i7">Replace &amp;&amp;7</param>
+			<param opt="True" name="i8">Replace &amp;&amp;8</param>
+			<param opt="True" name="i9">Replace &amp;&amp;9</param>
+		</func>	
+		<func name="IPrintLnBold" access="Public">
+			<self>[Player]</self>
+			<summary>Write bold line to the screen. Supports localized strings and string formating.</summary>
+			<returns></returns>
+			<example>IPrintLnBold( "Mitchell!" );</example>
+			<param name="text">text to be written</param>
+			<param opt="True" name="i1">Replace &amp;&amp;1</param>
+			<param opt="True" name="i2">Replace &amp;&amp;2</param>
+			<param opt="True" name="i3">Replace &amp;&amp;3</param>
+			<param opt="True" name="i4">Replace &amp;&amp;4</param>
+			<param opt="True" name="i5">Replace &amp;&amp;5</param>
+			<param opt="True" name="i6">Replace &amp;&amp;6</param>
+			<param opt="True" name="i7">Replace &amp;&amp;7</param>
+			<param opt="True" name="i8">Replace &amp;&amp;8</param>
+			<param opt="True" name="i9">Replace &amp;&amp;9</param>
+		</func>		
+		<func name="SetEnterTime" access="Public">
+			<self>Player</self>
+			<summary>Unknown</summary>
+			<returns></returns>
+			<example></example>
+			<param name="unknown"></param>
+		</func>	
+		<func name="ClonePlayer" access="Public">
+			<self>Player</self>
+			<summary>clone the player's model for death animations. </summary>
+			<returns>Entity - with classname 'noclass'</returns>
+			<example>body = self ClonePlayer(deathAnimDuration);</example>
+			<param name="deathAnimationDuration">the duration of the death animation</param>
+		</func>	
+		<func name="SetClientDvar" access="Public">
+			<self>Player</self>
+			<summary>Set the values of dvars which are specific to each client.</summary>
+			<returns></returns>
+			<example>self SetClientDvar( "cg_drawhud", "0" );</example>
+			<param name="dvarName">The name of a dvar. Valid dvar names: "cg_drawhud".</param>
+			<param name="value">The value to which the dvar will be set</param>
+		</func>		
+		<func name="SetClientDvars" access="Public">
+			<self>Player</self>
+			<summary>Set the values of a list of dvars which are specific to each client.</summary>
+			<returns></returns>
+			<example>self SetClientDvars( "cg_drawhud", "0", "cg_draw2d", "0" );</example>
+			<param name="n0">The name of a dvar. Valid dvar names: "cg_drawhud".</param>
+			<param name="v0">The value to which the dvar will be set</param>
+			<param opt="True" name="n1"></param>
+			<param opt="True" name="v1"></param>
+			<param opt="True" name="n2"></param>
+			<param opt="True" name="v2"></param>
+			<param opt="True" name="n3"></param>
+			<param opt="True" name="v3"></param>
+			<param opt="True" name="n4"></param>
+			<param opt="True" name="v4"></param>
+			<param opt="True" name="n5"></param>
+			<param opt="True" name="v5"></param>
+			<param opt="True" name="n6"></param>
+			<param opt="True" name="v6"></param>
+			<param opt="True" name="n7"></param>
+			<param opt="True" name="v7"></param>
+			<param opt="True" name="n8"></param>
+			<param opt="True" name="v8"></param>
+			<param opt="True" name="n9"></param>
+			<param opt="True" name="v9"></param>
+			<param opt="True" name="n10"></param>
+			<param opt="True" name="v10"></param>
+			<param opt="True" name="n11"></param>
+			<param opt="True" name="v11"></param>
+			<param opt="True" name="n12"></param>
+			<param opt="True" name="v12"></param>
+			<param opt="True" name="n13"></param>
+			<param opt="True" name="v13"></param>
+			<param opt="True" name="n14"></param>
+			<param opt="True" name="v14"></param>
+			<param opt="True" name="n15"></param>
+			<param opt="True" name="v15"></param>
+			<param opt="True" name="n16"></param>
+			<param opt="True" name="v16"></param>
+			<param opt="True" name="n17"></param>
+			<param opt="True" name="v17"></param>
+			<param opt="True" name="n18"></param>
+			<param opt="True" name="v18"></param>
+			<param opt="True" name="n19"></param>
+			<param opt="True" name="v19"></param>
+			<param opt="True" name="n20"></param>
+			<param opt="True" name="v20"></param>
+			<param opt="True" name="n21"></param>
+			<param opt="True" name="v21"></param>
+			<param opt="True" name="n22"></param>
+			<param opt="True" name="v22"></param>
+			<param opt="True" name="n23"></param>
+			<param opt="True" name="v23"></param>
+			<param opt="True" name="n24"></param>
+			<param opt="True" name="v24"></param>
+			<param opt="True" name="n25"></param>
+			<param opt="True" name="v25"></param>
+			<param opt="True" name="n26"></param>
+			<param opt="True" name="v26"></param>
+			<param opt="True" name="n27"></param>
+			<param opt="True" name="v27"></param>
+			<param opt="True" name="n28"></param>
+			<param opt="True" name="v28"></param>
+			<param opt="True" name="n29"></param>
+			<param opt="True" name="v29"></param>
+		</func>	
+		<func name="PlayLocalSound" access="Public">
+			<self>Player</self>
+			<summary>Plays a sound locally to the player</summary>
+			<returns></returns>
+			<example>players[i] PlayLocalSound( "MP_announcer_round_draw" );</example>
+			<param name="soundName">The name of the sound to play.</param>
+		</func>	
+		<func name="StopLocalSound" access="Public">
+			<self>Player</self>
+			<summary>Stops all instances of a local soundalias running on a player.</summary>
+			<returns></returns>
+			<example>level.player StopLocalSound( "annoying_siren" );</example>
+			<param name="soundName">The name of the sound to stop.</param>
+		</func>		
+		<func name="IsTalking" access="Public">
+			<self>Player</self>
+			<summary>Returns true if the player is talking via voice chat</summary>
+			<returns>Bool</returns>
+			<example></example>
+		</func>	
+		<func name="AllowSpectateTeam" access="Public">
+			<self>Player</self>
+			<summary>Set whether the player can spectate the given team. </summary>
+			<returns></returns>
+			<example>self AllowSpectateTeam( "axis", true );</example>
+			<param name="team">A string description of the team. Valid teams are 'axis', 'allies', 'none' or 'freelook'</param>
+			<param name="spectate">A boolean value describing whether this player can spectate on this team.</param>
+		</func>	
+		<func name="GetGuid" access="Public">
+			<self>Player</self>
+			<summary>Get the player's full guid.</summary>
+			<returns>String</returns>
+			<example></example>
+		</func>		
+		<func name="GetXuid" access="Public">
+			<self>Player</self>
+			<summary>Unknown</summary>
+			<returns></returns>
+			<example></example>
+		</func>	
+		<func name="AllowAds" access="Public">
+			<self>Player</self>
+			<summary>Sets whether the player can switch to ADS</summary>
+			<returns></returns>
+			<example>level.player AllowAds( false );</example>
+			<param name="playerAds">A boolean. true if the player can switch to ADS, and false otherwise.</param>
+		</func>		
+		<func name="AllowJump" access="Public">
+			<self>Player</self>
+			<summary>Sets whether the player can jump</summary>
+			<returns></returns>
+			<example>level.player AllowJump(false);</example>
+			<param name="playerJump">A boolean. True if the player can jump, and false otherwise</param>
+		</func>	
+		<func name="AllowSprint" access="Public">
+			<self>Player</self>
+			<summary>Sets whether the player can sprint</summary>
+			<returns></returns>
+			<example>level.player AllowSprint(false);</example>
+			<param name="playerSprint">A boolean. True if the player can sprint, and false otherwise</param>
+		</func>	
+		<func name="SetSpreadOverride" access="Public">
+			<self>Player</self>
+			<summary>Sets the player fixed spread value</summary>
+			<returns></returns>
+			<example>level.player SetSpreadOverride( 30 );</example>
+			<param name="playerSpread">An integer. It will override all the spread values (min, max, stand, 
+crouch, prone) no matter which weapon is in use.</param>
+		</func>		
+		<func name="ResetSpreadOverride" access="Public">
+			<self>Player</self>
+			<summary>Resets the player spread value to the ones of the weapon in use.</summary>
+			<returns></returns>
+			<example>level.player ResetSpreadOverride();</example>
+		</func>	
+		<func name="SetActionSlot" access="Public">
+			<self>Player</self>
+			<summary>Sets the option to perform when the player executes (for example) "+actionslot 1".</summary>
+			<returns></returns>
+			<example>level.player SetActionSlot(1, "altmode"); // switch between attached m203 grenade launcher, if available
+level.player SetActionSlot( 2, "nightvision" );  //toggle nightvision on and off
+level.player SetActionSlot( 4, "weapon", "c4" );
+level.player SetActionSlot( 3, "" );</example>
+			<param name="slot">1 through 4, corresponding to bindings "+actionslot 1" through "+actionslot 4</param>
+			<param name="optionName">valid choices are "weapon", "nightVision", "altMode", and "" (blank).</param>
+			<param opt="True" name="extraParameter">Used by the "weapon" option, the name of the weapon to switch to.</param>
+		</func>	
+		<func name="GetWeaponsList" access="Public">
+			<self>Player</self>
+			<summary>Gets an array of all weapons that the player has. Includes any alt-mode weapons (ex: m203_m4)</summary>
+			<returns></returns>
+			<example>weapList = level.player GetWeaponsList();</example>
+		</func>		
+		<func name="GetWeaponsListPrimaries" access="Public">
+			<self>Player</self>
+			<summary>Gets an array of all primary weapons that the player has.</summary>
+			<returns></returns>
+			<example>weapList = level.player GetWeaponsListPrimaries();</example>
+		</func>	
+		<func name="SetPerk" access="Public">
+			<self>Player</self>
+			<summary>give the specified perk</summary>
+			<returns></returns>
+			<example>player SetPerk( "specialty_gpsjammer" );</example>
+			<param name="perkName">the perk to give</param>
+		</func>	
+		<func name="HasPerk" access="Public">
+			<self>Player</self>
+			<summary>test if player has a perk</summary>
+			<returns>Bool</returns>
+			<example>player HasPerk( "specialty_gpsjammer" );</example>
+			<param name="perkName">the perk to check</param>
+		</func>		
+		<func name="ClearPerks" access="Public">
+			<self>Player</self>
+			<summary>removes all perks for a player</summary>
+			<returns></returns>
+			<example>player ClearPerks();</example>
+		</func>	
+		<func name="UnSetPerk" access="Public">
+			<self>Player</self>
+			<summary>takes the specified perk from the player</summary>
+			<returns></returns>
+			<example>player UnSetPerk( "specialty_gpsjammer" );</example>
+			<param name="perkName">the perk to unset</param>
+		</func>	
+		<func name="UpdateScores" access="Public">
+			<self>Player</self>
+			<summary>Updates the client's knowledge of team scores</summary>
+			<returns></returns>
+			<example>player UpdateScores()</example>
+		</func>		
+		<func name="UpdateDMScores" access="Public">
+			<self>Player</self>
+			<summary>Updates the client's knowledge of scores for himself and the (next) best player in the game. 
+For use in Deathmatch.</summary>
+			<returns></returns>
+			<example>player UpdateDMScores()</example>
+		</func>	
+		<func name="SetRank" access="Public">
+			<self>Player</self>
+			<summary>Sets the player's rank and prestige level</summary>
+			<returns></returns>
+			<example>player SetRank( 1, 2 )</example>
+			<param name="rankId"></param>
+			<param name="prestigeLevel" opt="True"></param>
+		</func>	
+		<!-- PLAYER CMD -->
+		<!-- HUD -->
+		<func name="SetText" access="Public">
+			<self>HUDElement</self>
+			<summary>Set HUD text for this element.</summary>
+			<returns></returns>
+			<example>level.introstring1 SetText(string1);</example>
+			<param name="text">A localized text reference</param>
+		</func>		
+		<func name="ClearAllTextAfterHudelem" access="Public">
+			<self>HUDElement</self>
+			<summary>Clear the config strings for the unique text set after this string. This is intended 
+for development use only.</summary>
+			<returns></returns>
+			<example>level.freeTextMarker ClearAllTextAfterHudelem();</example>
+		</func>	
+		<func name="SetShader" access="Public">
+			<self>HUDElement</self>
+			<summary>Set the material for this Hud Element</summary>
+			<returns></returns>
+			<example>waypoint SetShader( "playbook_objective_stop", 15, 15 );</example>
+			<param name="materialName">A the name of the material to set</param>
+			<param name="width">The width of the material.</param>
+			<param name="height">The height of the material.</param>
+		</func>	
+		<func name="SetTargetEnt" access="Public">
+			<self>HUDElement</self>
+			<summary>Set the entity that this waypoint should target. In MP, entity should already be a broadcasting 
+entity, as with Objective_OnEntity().</summary>
+			<returns></returns>
+			<example>waypoint SetTargetEnt( level.axis.bombcarrier );</example>
+			<param name="entity">Entity to Target</param>
+		</func>		
+		<func name="ClearTargetEnt" access="Public">
+			<self>HUDElement</self>
+			<summary>Clear this waypoint from targetting an entity.</summary>
+			<returns></returns>
+			<example>waypoint ClearTargetEnt();</example>
+		</func>	
+		<func name="SetTimer" access="Public">
+			<self>HUDElement</self>
+			<summary>Set a timer HUD element to count down</summary>
+			<returns></returns>
+			<example>level.reinforcement_hud SetTimer( level.counter )</example>
+			<param name="time">The new timer time</param>
+		</func>	
+		<func name="SetTimerUp" access="Public">
+			<self>HUDElement</self>
+			<summary>Set a timer HUD element to count up</summary>
+			<returns></returns>
+			<example>level.reinforcement_hud SetTimerUp( level.counter )</example>
+			<param name="time">The new timer time</param>
+		</func>		
+		<func name="SetTenthsTimer" access="Public">
+			<self>HUDElement</self>
+			<summary>Set a timer HUD element to count down in tenths of a second</summary>
+			<returns></returns>
+			<example>self.kc_timer SetTenthsTimer( self.archivetime - delay );</example>
+			<param name="time">The new timer time</param>
+		</func>	
+		<func name="SetTenthsTimerUp" access="Public">
+			<self>HUDElement</self>
+			<summary>Set a timer HUD element to count up in tenths of a second</summary>
+			<returns></returns>
+			<example>self.kc_timer SetTenthsTimerUp( self.archivetime - delay );</example>
+			<param name="time">The new timer time</param>
+		</func>	
+		<func name="SetClock" access="Public">
+			<self>HUDElement</self>
+			<summary>Set a clock HUD element to count down over a time period.</summary>
+			<returns></returns>
+			<example>level.bombstopwatch SetClock( 5, 60, "hudStopwatch", 64, 64 ); </example>
+			<param name="time">The new timer time in seconds to count down</param>
+			<param name="fullTime">The time in seconds represented by a full cycle of the hand, 
+for instance a stopwatch would be 60s.</param>
+			<param name="material">The material for the hud clock </param>
+			<param name="width">The width of the material.</param>
+			<param name="height">The height of the material.</param>
+		</func>		
+		<func name="SetClockUp" access="Public">
+			<self>HUDElement</self>
+			<summary>Set a clock HUD element to count up over a time period.</summary>
+			<returns></returns>
+			<example>level.bombstopwatch SetClockUp( 5, 60, "hudStopwatch", 64, 64 ); </example>
+			<param name="time">The new timer time in seconds to count up</param>
+			<param name="fullTime">The time in seconds represented by a full cycle of the hand, 
+for instance a stopwatch would be 60s.</param>
+			<param name="material">The material for the hud clock </param>
+			<param name="width">The width of the material.</param>
+			<param name="height">The height of the material.</param>
+		</func>	
+		<func name="SetValue" access="Public">
+			<self>HUDElement</self>
+			<summary>Set a value HUD element to a given value.</summary>
+			<returns></returns>
+			<example>level.reinforcement_hud SetValue( 0 ); </example>
+			<param name="value">The value to set the element to</param>
+		</func>	
+		<func name="SetWayPoint" access="Public">
+			<self>HUDElement</self>
+			<summary>Sets a hud element to be a waypoint.</summary>
+			<returns></returns>
+			<example>newdeathicon SetWayPoint( true );</example>
+			<param name="constantSize">boolean describing whether the hud element remains the same size</param>
+			<param opt="True" name="offscreenMaterialName">Material to draw when waypoint is offscreen.</param>
+		</func>		
+		<func name="FadeOverTime" access="Public">
+			<self>HUDElement</self>
+			<summary>Set a hud element to transition in color (or alpha) over time. Normally setting the color (or alpha) 
+of an element causes an immediate visual change. However, if the color (or alpha) gets set within 
+time after calling fadeOverTime, then the hud element will transition to the new color over 
+the remaining time.</summary>
+			<returns></returns>
+			<example>level.introstring1 FadeOverTime( 1.2 );  level.introstring1.alpha = 0.3;  // This will 
+			transition the alpha from whatever it was before to the new value of 0.3 over 1.2 seconds.</example>
+			<param name="time">The time to fade the element in seconds</param>
+		</func>	
+		<func name="ScaleOverTime" access="Public">
+			<self>HUDElement</self>
+			<summary>Set a hud element to scale over time.</summary>
+			<returns></returns>
+			<example>other.progressbar ScaleOverTime( level.planttime, level.barsize, 8 ); </example>
+			<param name="time">The time to scale the element in seconds</param>
+			<param name="width">The new width of the material.</param>
+			<param name="height">The new height of the material.</param>
+		</func>	
+		<func name="MoveOverTime" access="Public">
+			<self>HUDElement</self>
+			<summary>Set a hud element to move over time.</summary>
+			<returns></returns>
+			<example>newStr MoveOverTime( timer );</example>
+			<param name="time">The time to move the element in seconds</param>
+		</func>		
+		<func name="Reset" access="Public">
+			<self>HUDElement</self>
+			<summary>Reset a HUD element to its default state.</summary>
+			<returns></returns>
+			<example>element Reset(); </example>
+		</func>	
+		<func name="Destroy" access="Public">
+			<self>HUDElement</self>
+			<summary>Remove this Hud element altogether.</summary>
+			<returns></returns>
+			<example>self.bombstopwatch Destroy(); </example>
+		</func>	
+		<func name="SetPulseFX" access="Public">
+			<self>HUDElement</self>
+			<summary>Set the hudelem string to display with a "Pulse" effect.</summary>
+			<returns></returns>
+			<example>elem SetPulseFX( 40, 2000, 600 );</example>
+			<param name="speed">Time (in milliseconds) each letter takes to type out.</param>
+			<param name="decayStart">Time to wait before starting the string's decay effect.</param>
+			<param name="decayDuration">How long to spend decaying.</param>
+		</func>	
+		<func name="SetPlayerNameString" access="Public">
+			<self>HUDElement</self>
+			<summary>Set the player name string for a HUD element</summary>
+			<returns></returns>
+			<example></example>
+			<param name="player">A player entity</param>
+		</func>	
+		<func name="SetMapNameString" access="Public">
+			<self>HUDElement</self>
+			<summary>Set the map name string</summary>
+			<returns></returns>
+			<example></example>
+			<param name="mapName">A string containing the map name</param>
+		</func>	
+		<func name="SetGameTypeString" access="Public">
+			<self>HUDElement</self>
+			<summary>Set the game type string for the game</summary>
+			<returns></returns>
+			<example></example>
+			<param name="gameType">A string containing the game type</param>
+		</func>	
+		<!-- HUD -->
+		<!-- ENTITY -->
+		<func name="Attach" access="Public">
+			<self>Entity</self>
+			<summary>Attach a model to an entity.</summary>
+			<returns></returns>
+			<example>self Attach( "panzerflak_ammo", "tag_weapon_left" );</example>
+			<param name="modelName">The model name to attach (string).</param>
+			<param name="tagName" opt="True">The tag to attach the model to (string).</param>
+			<param name="ignoreCollision" opt="True">flag to ignore collision. Defaults to false (integer).</param>
+		</func>	
+		<func name="Detach" access="Public">
+			<self>Entity</self>
+			<summary>detaches an attached model from an entity </summary>
+			<returns></returns>
+			<example>self Detach( "explosivepack", "tag_weapon_right" );</example>
+			<param name="modelName">The model name to detach (string)</param>
+			<param opt="True" name="tagName">The tag to detach the model from (string)</param>
+		</func>	
+		<func name="DetachAll" access="Public">
+			<self>Entity</self>
+			<summary>detaches all attached models from an entity </summary>
+			<returns></returns>
+			<example>self DetachAll();</example>
+		</func>	
+		<func name="GetAttachSize" access="Public">
+			<self>Entity</self>
+			<summary>Returns the number of attached models for this entity.</summary>
+			<returns></returns>
+			<example>self GetAttachSize();</example>
+		</func>	
+		<func name="GetAttachModelName" access="Public">
+			<self>Entity</self>
+			<summary>Returns the name of the attached model at the given attachment slot </summary>
+			<returns></returns>
+			<example>self GetAttachModelName( index );</example>
+			<param name="modelIndex">The index of the model attached to the entity, starting at 0, so for instance 3 
+will get the fourth model attached. (integer)</param>
+		</func>	
+		<func name="GetAttachTagName" access="Public">
+			<self>Entity</self>
+			<summary>Returns the tagname of the attached model at the given attachment slot </summary>
+			<returns></returns>
+			<example>self GetAttachTagName( index );</example>
+			<param name="modelIndex">The index of the model attached to the entity, starting at 0, so for instance 3 
+will get the fourth model attached. (integer)</param>
+		</func>	
+		<func name="GetAttachIgnoreCollision" access="Public">
+			<self>Entity</self>
+			<summary>Returns the ignore collision flag of the attached model at the given attachment slot </summary>
+			<returns></returns>
+			<example>self GetAttachIgnoreCollision( index );</example>
+			<param name="modelIndex">The index of the model attached to the entity, starting at 0, so for instance 3 
+will get the fourth model attached. (integer)</param>
+		</func>	
+		<func name="GetAmmoCount" access="Public">
+			<self>Entity</self>
+			<summary>Get the remaining ammo</summary>
+			<returns></returns>
+			<example>GetAmmoCount( "mosin_nagant_sniper" );</example>
+			<param name="weaponName">The weapon name.</param>
+		</func>	
+		<func name="GetClanID" access="Public">
+			<self>Entity</self>
+			<summary>Return the id of the clan</summary>
+			<returns></returns>
+			<example>player GetClanID();</example>
+		</func>	
+		<func name="GetClanName" access="Public">
+			<self>Entity</self>
+			<summary>Return the name for the player's clan</summary>
+			<returns></returns>
+			<example>player GetClanName();</example>
+		</func>	
+		<func name="HidePart" access="Public">
+			<self>Entity</self>
+			<summary>Hide part of an entity.</summary>
+			<returns></returns>
+			<example>self HidePart( "tag_weapon", "weapon_saw" );</example>
+			<param name="tagName">The tag to hide. All surfaces with a vertex weighted to the tag will be hidden 
+and have no bullet collision. (string)</param>
+			<param opt="True" name="modelName">The optional model name to help specify the part location. (string)</param>
+		</func>	
+		<func name="ShowPart" access="Public">
+			<self>Entity</self>
+			<summary>Show part of an entity.</summary>
+			<returns></returns>
+			<example>self ShowPart( "tag_weapon", "weapon_saw" );</example>
+			<param name="tagName">The tag to show. All surfaces with a vertex weighted to the tag will be shown. (string)</param>
+			<param opt="True" name="modelName">The optional model name to help specify the part location. (string)</param>
+		</func>	
+		<func name="ShowAllParts" access="Public">
+			<self>Entity</self>
+			<summary>Show all parts of an entity.</summary>
+			<returns></returns>
+			<example>self ShowAllParts();</example>
+		</func>	
+		<func name="LinkTo" access="Public">
+			<self>Entity</self>
+			<summary>Attaches one entity to another</summary>
+			<returns></returns>
+			<example>self.rightturret LinkTo( self, "tag_gunRight", (0,0,0), (0,0,0) );</example>
+			<param name="linkToEntity">The entity to attach this thing to</param>
+			<param opt="True" name="tagName">The tag to attach the entity to</param>
+			<param opt="True" name="originOffset">The positional offset from the base position</param>
+			<param opt="True" name="anglesOffset">The angular offset from the base angles</param>
+		</func>	
+		<func name="Unlink" access="Public">
+			<self>Entity</self>
+			<summary>Unlinks a linked entity from another entity</summary>
+			<returns></returns>
+			<example>guy Unlink();</example>
+		</func>	
+		<func name="EnableLinkTo" access="Public">
+			<self>Entity</self>
+			<summary>enables linkto for an entity</summary>
+			<returns></returns>
+			<example>self.bombtrigger EnableLinkTo();</example>
+		</func>	
+		<func name="GetOrigin" access="Public">
+			<self>Entity</self>
+			<summary>Gets the origin of an entity</summary>
+			<returns></returns>
+			<example>origin = self GetOrigin();</example>
+		</func>	
+		<func name="GetEye" access="Public">
+			<self>Entity - An entity that is either the AI or a Player</self>
+			<summary>Gets the position of the eye for an AI or Player</summary>
+			<returns></returns>
+			<example>eyePos = level.player GetEye();</example>
+		</func>	
+		<func name="UseBy" access="Public">
+			<self>Entity - The entity to be used </self>
+			<summary>Uses the entity with the passed in entity as the activator</summary>
+			<returns></returns>
+			<example>level.ArmoredCar.turret UseBy( level.player );</example>
+			<param name="usingEntity">The entity that is using the other entity</param>
+		</func>	
+		<func name="SetStableMissile" access="Public">
+			<self>Entity</self>
+			<summary>This entity will shoot missiles that do not destabilize. Only applicable to vehicles, players and AI</summary>
+			<returns></returns>
+			<example></example>
+			<param name="stableMissileFlag">True if the entity shoots stable missiles</param>
+		</func>	
+		<func name="IsTouching" access="Public">
+			<self>Entity</self>
+			<summary></summary>
+			<returns></returns>
+			<example>if ( level.player IsTouching( self ) )...</example>
+			<param name="touchedEntity">The entity that is to be tested against</param>
+		</func>	
+		<func name="PlaySound" access="Public">
+			<self>Entity</self>
+			<summary>Play the sound alias as if coming from the entity</summary>
+			<returns></returns>
+			<example>self PlaySound("Dirt_skid","skidsound",true);</example>
+			<param name="aliasName">The sound alias to play</param>
+		</func>	
+		<func name="PlaySoundAsMaster" access="Public">
+			<self>Entity</self>
+			<summary>Play the sound alias as if coming from the entity, as a master sound</summary>
+			<returns></returns>
+			<example>self PlaySoundAsMaster( "Dirt_skid", "skidsound", true );</example>
+			<param name="aliasName">The sound alias to play</param>
+		</func>	
+		<func name="PlaySoundToTeam" access="Public">
+			<self>Entity</self>
+			<summary>Play the sound alias as if coming from the entity, so that only one team can hear it</summary>
+			<returns></returns>
+			<example>self PlaySoundToTeam( "frag_out", "axis", self );</example>
+			<param name="aliasName">The sound alias to play</param>
+			<param name="teamName">The team that will be able to hear the sound. Must be either 'axis' or 'allies'.</param>
+			<param name="ignorePlayer">If present, this player will not hear the sound.</param>
+		</func>	
+		<func name="PlaySoundToPlayer" access="Public">
+			<self>Entity</self>
+			<summary>Play the sound alias as if coming from the entity, so that only one player can hear it</summary>
+			<returns></returns>
+			<example>self PlaySoundToPlayer( "frag_out", self );</example>
+			<param name="aliasName">The sound alias to play</param>
+			<param name="player">The player that will be able to hear the sound.</param>
+		</func>	
+		<func name="PlayLoopSound" access="Public">
+			<self>Entity</self>
+			<summary>Play a sound as a loop</summary>
+			<returns></returns>
+			<example>car PlayLoopSound( "peugeot_idle_low" );</example>
+			<param name="aliasName">The sound alias to play</param>
+		</func>	
+		<func name="StopLoopSound" access="Public">
+			<self>Entity</self>
+			<summary>Stop a looping sound</summary>
+			<returns></returns>
+			<example>car StopLoopSound();</example>
+			<param name="rumbleName" opt="True">The name of the soundalias</param>
+		</func>	
+		<func name="PlayRumbleOnEntity" access="Public">
+			<self>Entity</self>
+			<summary>Plays a rumble on the given entity.</summary>
+			<returns></returns>
+			<example>self PlayRumbleOnEntity( "damage_heavy" );</example>
+			<param name="rumbleName">The name of the rumble to play</param>
+		</func>	
+		<func name="PlayRumbleLoopOnEntity" access="Public">
+			<self>Entity</self>
+			<summary>Plays a looping controller rumble on the given player.</summary>
+			<returns></returns>
+			<example>self PlayRumbleLoopOnEntity( "tank_rumble" );</example>
+			<param name="rumbleName">The name of the rumble to play</param>
+		</func>	
+		<func name="StopRumble" access="Public">
+			<self>Entity</self>
+			<summary>Quits the playing of a particular rumble on a player.</summary>
+			<returns></returns>
+			<example>self StopRumble( "tank_rumble" );</example>
+			<param name="rumbleName">The name of the rumble to stop</param>
+		</func>	
+		<func name="Delete" access="Public">
+			<self>Entity</self>
+			<summary>Removes an entity from the game in the same manner as a trigger_kill"</summary>
+			<returns></returns>
+			<example>thing Delete();</example>
+		</func>	
+		<func name="SetModel" access="Public">
+			<self>Entity</self>
+			<summary>Sets the model of the entity to the given model name</summary>
+			<returns></returns>
+			<example>splinter SetModel( "wood_plank2" );</example>
+			<param name="modelName">The name of the model to set this entity to</param>
+		</func>	
+		<func name="GetNormalHealth" access="Public">
+			<self>Entity</self>
+			<summary>Gets the normal health of this entity</summary>
+			<returns></returns>
+			<example>health = entity GetNormalHealth();</example>
+		</func>	
+		<func name="SetNormalHealth" access="Public">
+			<self>Entity</self>
+			<summary>Sets the normal health of this entity</summary>
+			<returns></returns>
+			<example>self SetNormalHealth( (self.maxhealth - self.damageTaken) / self.maxHealth );</example>
+			<param name="health">The new normal health</param>
+		</func>	
+		<func name="Show" access="Public">
+			<self>Entity</self>
+			<summary>Shows a hidden entity</summary>
+			<returns></returns>
+			<example>brokenwindow Show();</example>
+		</func>	
+		<func name="Hide" access="Public">
+			<self>Entity</self>
+			<summary>Hides a visible entity</summary>
+			<returns></returns>
+			<example>brokenwindow Hide();</example>
+		</func>	
+		<func name="LaserOn" access="Public">
+			<self>Entity</self>
+			<summary>Turns on entity's laser sight.</summary>
+			<returns></returns>
+			<example>self LaserOn();</example>
+		</func>	
+		<func name="LaserOff" access="Public">
+			<self>Entity</self>
+			<summary>Turns off entity's laser sight.</summary>
+			<returns></returns>
+			<example>self LaserOff();</example>
+		</func>	
+		<func name="ShowToPlayer" access="Public">
+			<self>Entity</self>
+			<summary>Show the entity to a given client</summary>
+			<returns></returns>
+			<example></example>
+			<param name="player">The player to show the entity to.</param>
+		</func>	
+		<func name="SetContents" access="Public">
+			<self>Entity</self>
+			<summary>Sets the contents of an entity. Returns the old contents.</summary>
+			<returns></returns>
+			<example></example>
+			<param name="contents">an integer describing the contents of this entity</param>
+		</func>	
+		<func name="GetStance" access="Public">
+			<self>Entity</self>
+			<summary>Gets the stance of the player. It only works for the player. Possible return values are 'crouch', 
+'prone' and 'stand'</summary>
+			<returns></returns>
+			<example>if ( level.player GetStance() == "crouch") )...</example>
+		</func>	
+		<func name="SetCursorHint" access="Public">
+			<self>Entity - An entity that is associated with the cursor hint</self>
+			<summary>Sets a visible cursor near to an objective</summary>
+			<returns></returns>
+			<example></example>
+			<param name="hint">one of the following strings: "HINT_NOICON", "HINT_ACTIVATE", "HINT_HEALTH", 
+"HINT_FRIENDLY"</param>
+		</func>	
+		<func name="SetHintString" access="Public">
+			<self>Entity - Either a trigger_use entity or an actor</self>
+			<summary>Sets the hint string for a usable entity </summary>
+			<returns></returns>
+			<example>fuel_lever SetHintString( &amp;"ROCKET_FUEL_LEVER" );</example>
+			<param name="string">The string to use for a hint near a usable entity - It saves to configstrings</param>
+		</func>	
+		<func name="UseTriggerRequireLookAt" access="Public">
+			<self>Entity - A trigger_use entity </self>
+			<summary>Modifies the use trigger so that it requires the user to be looking at it</summary>
+			<returns></returns>
+			<example>fuel_lever UseTriggerRequireLookAt();</example>
+		</func>	
+		<func name="ShellShock" access="Public">
+			<self>Entity</self>
+			<summary>Start a shell shock sequence for the player. The shell shock must be precached, 
+otherwise calling this script will cause a script error.</summary>
+			<returns></returns>
+			<example>self ShellShock( "death", 5 );</example>
+			<param name="shellShockName"></param>
+			<param name="duration">duration in seconds. The duration must be between 0 and 60 seconds. </param>
+			<param opt="True" name="overrideCheat">Certain player cheats can disable this function, set this true to force the issue.</param>
+		</func>	
+		<func name="GetTagOrigin" access="Public">
+			<self>Entity - An entity with a model </self>
+			<summary>Gets the origin of a particular tag on this model</summary>
+			<returns>Vector</returns>
+			<example>leftorg = self GetTagOrigin( "tag_wheel_back_left" );</example>
+			<param name="tagName">The name of the tag</param>
+		</func>	
+		<func name="GetTagAngles" access="Public">
+			<self>Entity - An entity with a model </self>
+			<summary>Gets the angles of a particular tag on this model</summary>
+			<returns>Vector</returns>
+			<example>leftorg = self GetTagAngles( "tag_wheel_back_left" );</example>
+			<param name="unknown"></param>
+		</func>	
+		<func name="StopShellShock" access="Public">
+			<self>Entity</self>
+			<summary>Stop a shell shock sequence for the player</summary>
+			<returns></returns>
+			<example>self StopShellShock();</example>
+		</func>	
+		<func name="SetDepthOfField" access="Public">
+			<self>Entity</self>
+			<summary>Set the depth of field values for a player. If start >= end for near or far, depth of field 
+is disabled for that region.</summary>
+			<returns></returns>
+			<example>self SetDepthOfField( 10, 80, 1000, 7000, 5, 1.5 );</example>
+			<param name="nearStart">Before this distance, near depth of field is maximally blurry</param>
+			<param name="nearEnd">After this distance, near depth of field is perfectly in focus</param>
+			<param name="farStart">Before this distance, far depth of field is perfectly in focus</param>
+			<param name="farEnd">After this distance, far depth of field is maximally blurry</param>
+			<param name="nearBlur">Maximal blur radius for near depth of field, in pixels at 640x480</param>
+			<param name="farBlur">Maximal blur radius for far depth of field, in pixels at 640x480</param>
+		</func>	
+		<func name="SetViewModelDepthOfField" access="Public">
+			<self>Entity</self>
+			<summary>Set the depth of field values for the player's viewmodel when at hip. If start >= end, 
+depth of field is disabled.</summary>
+			<returns></returns>
+			<example>self SetViewModelDepthOfField( 2, 10 );</example>
+			<param name="start">Before this distance, depth of field is maximally blurry</param>
+			<param name="end">After this distance, depth of field is perfectly in focus</param>
+		</func>	
+		<func name="ViewKick" access="Public">
+			<self>Entity</self>
+			<summary>Damage the player, and throw the screen around</summary>
+			<returns></returns>
+			<example>level.player ViewKick( 127, level.player.origin );</example>
+			<param name="force">The force of the kick, from 0 to 127</param>
+			<param name="source">(a point) the source of the kick</param>
+		</func>	
+		<func name="LocalToWorldCoords" access="Public">
+			<self>Entity</self>
+			<summary>Transform the given local coordinate point to a world coordinate point</summary>
+			<returns></returns>
+			<example>ramboPoint = self LocalToWorldCoords( delta );</example>
+			<param name="localCoordinate">The point in local coordinates</param>
+		</func>	
+		<func name="SetRightArc" access="Public">
+			<self>Entity</self>
+			<summary>Set the amount that the turret can move to the right</summary>
+			<returns></returns>
+			<example>mg42 SetRightArc( 4 5);</example>
+			<param name="angle">The right arc in degrees</param>
+		</func>	
+		<func name="SetLeftArc" access="Public">
+			<self>Entity</self>
+			<summary>Set the amount that the turret can move to the left</summary>
+			<returns></returns>
+			<example>mg42 SetLeftArc( 45 );</example>
+			<param name="angle">The left arc in degrees</param>
+		</func>	
+		<func name="SetTopArc" access="Public">
+			<self>Entity</self>
+			<summary>Set the amount that the turret can pivot up</summary>
+			<returns></returns>
+			<example>mg42 SetTopArc( 45 );</example>
+			<param name="angle">The top arc in degrees</param>
+		</func>	
+		<func name="SetBottomArc" access="Public">
+			<self>Entity</self>
+			<summary>Set the amount that the turret can pivot down</summary>
+			<returns></returns>
+			<example>mg42 SetBottomArc( 45 );</example>
+			<param name="angle">The bottom arc in degrees</param>
+		</func>	
+		<func name="Detonate" access="Public">
+			<self>Entity - A grenade </self>
+			<summary>Causes a grenade to explode. Must be called on a grenade.</summary>
+			<returns></returns>
+			<example>grenade Detonate( attacker );</example>
+			<param opt="True" name="newOwner">The player who will be the attacker if the grenade does damage 
+to another player. If not specified, will be the original owner of the grenade.</param>
+		</func>	
+		<func name="DamageConeTrace" access="Public">
+			<self>Entity - The entity to do the damage check against</self>
+			<summary>Determines how much the entity can be damaged from the given position, using the same check 
+that is used by grenades. Performs multiple damage traces and returns an approximation 
+to how much of the entity is damageable from the given point (between 0 and 1). 
+In SinglePlayer this will always be 1 if the entity is partially damageable.</summary>
+			<returns></returns>
+			<example>damageAmount = player DamageConeTrace( damager.origin, damager );</example>
+			<param name="damagePosition">The point the damage is coming from</param>
+			<param name="ignoreEntity">An entity to ignore when doing the traces; usually the source of the damage</param>
+		</func>	
+		<func name="SightConeTrace" access="Public">
+			<self>Entity - The entity to do the sight check against </self>
+			<summary>Determines how much the entity can be seen from the given position, using the same check 
+that is used by grenades. Performs multiple sight traces and returns an approximation 
+to how much of the entity is visible from the given point (between 0 and 1). 
+In SinglePlayer this will always be 1 if the entity is partially visible.</summary>
+			<returns></returns>
+			<example>visibilityAmount = player SightConeTrace( eye.origin, eye );</example>
+			<param name="sightPosition">The point the sight starts at</param>
+			<param name="ignoreEntity">An entity to ignore when doing the traces</param>
+		</func>	
+		<func name="GetEntityNumber" access="Public">
+			<self>Entity</self>
+			<summary>Get the entity number of this entity</summary>
+			<returns></returns>
+			<example>selfnum = self GetEntityNumber();</example>
+		</func>	
+		<func name="EnableGrenadeTouchDamage" access="Public">
+			<self>Entity - A damage trigger entity</self>
+			<summary>enable grenade damage for damage triggers</summary>
+			<returns></returns>
+			<example>self EnableGrenadeTouchDamage();</example>
+		</func>	
+		<func name="DisableGrenadeTouchDamage" access="Public">
+			<self>Entity - A damage trigger entity</self>
+			<summary>Disable grenade damage for damage triggers</summary>
+			<returns></returns>
+			<example>self DisableGrenadeTouchDamage();</example>
+		</func>	
+		<func name="EnableAimAssist" access="Public">
+			<self>Entity - An entity with a brushmodel</self>
+			<summary>Enables aim assist on an entity. The entity must have a brush model</summary>
+			<returns></returns>
+			<example>self EnableAimAssist();</example>
+		</func>	
+		<func name="DisableAimAssist" access="Public">
+			<self>Entity - An entity with a brushmodel </self>
+			<summary>Disables aim assist on an entity. The entity must have a brush model</summary>
+			<returns></returns>
+			<example>self DisableAimAssist();</example>
+		</func>	
+		<func name="PlaceSpawnPoint" access="Public">
+			<self>Entity - A spawn point</self>
+			<summary>Raises the spawn point up to make sure it's not in the ground, then drops it back down into the ground.</summary>
+			<returns></returns>
+			<example>spawnpoints[i] PlaceSpawnPoint();</example>
+		</func>	
+		<func name="SetTeamForTrigger" access="Public">
+			<self>Entity - A trigger </self>
+			<summary>Set the team that this trigger will react to</summary>
+			<returns></returns>
+			<example>self SetTeamForTrigger( game["attackers"] );</example>
+			<param name="teamName">The name of the team that the trigger will respond to. Must be either 'axis', 
+'allies' or 'none'</param>
+		</func>	
+		<func name="ClientClaimTrigger" access="Public">
+			<self>Entity - A Client</self>
+			<summary>Claim a single user trigger.</summary>
+			<returns></returns>
+			<example>other ClientClaimTrigger( self );</example>
+			<param name="trigger">A trigger entity.</param>
+		</func>	
+		<func name="ClientReleaseTrigger" access="Public">
+			<self>Entity - A Client</self>
+			<summary>Release a single user trigger.</summary>
+			<returns></returns>
+			<example>other ClientReleaseTrigger( self );</example>
+			<param name="trigger">A trigger entity.</param>
+		</func>	
+		<func name="ReleaseClaimedTrigger" access="Public">
+			<self>Entity - A Trigger</self>
+			<summary>Release a currently claimed trigger</summary>
+			<returns></returns>
+			<example></example>
+		</func>	
+		<func name="GetStat" access="Public">
+			<self>Entity</self>
+			<summary></summary>
+			<returns></returns>
+			<example></example>
+			<param name="statId">Int</param>
+		</func>	
+		<func name="SetStat" access="Public">
+			<self>Entity</self>
+			<summary></summary>
+			<returns></returns>
+			<example></example>
+			<param name="statId">Int</param>
+			<param name="value">Int</param>
+		</func>	
+		<func name="SendLeaderBoards" access="Public">
+			<self>Entity</self>
+			<summary>Unknown</summary>
+			<returns></returns>
+			<example></example>
+			<param name="unknown"></param>
+		</func>	
+		<func name="SetMoveSpeedScale" access="Public">
+			<self>Entity - A Player Entity</self>
+			<summary>Scales player movement speed by this amount</summary>
+			<returns></returns>
+			<example>self SetMoveSpeedScale( 1.5 );</example>
+			<param name="scale">The amount to scale player movement</param>
+		</func>	
+		<func name="Missile_SetTarget" access="Public">
+			<self>Entity - A missile</self>
+			<summary>Sets the target entity for a guided missile</summary>
+			<returns></returns>
+			<example>missile Missile_SetTarget( otherEnt );</example>
+			<param name="targetEntity">The entity toward which the missile will steer.</param>
+			<param name="targetOffset">A vector, giving the offset from the entity's origin toward which 
+the missile will steer.</param>
+		</func>	
+		<func name="IsOnLadder" access="Public">
+			<self>Entity</self>
+			<summary>Return true if the player is on a ladder, false otherwise.</summary>
+			<returns>Bool</returns>
+			<example>self IsOnLadder();</example>
+		</func>	
+		<func name="IsMantling" access="Public">
+			<self>Entity</self>
+			<summary>Return true if the player is mantling, false otherwise.</summary>
+			<returns>Bool</returns>
+			<example>self IsMantling();</example>
+		</func>	
+		<func name="StartRagdoll" access="Public">
+			<self>Entity - A player or player corpse</self>
+			<summary>Begin ragdoll physics for this entity. Does nothing if the entity is already a ragdoll.</summary>
+			<returns></returns>
+			<example>self StartRagdoll();</example>
+			<param name="rigIndex" opt="True">Index of the ragdoll rig to use. Defaults to 0.</param>
+		</func>	
+		<func name="IsRagdoll" access="Public">
+			<self>Entity - A player or player corpse </self>
+			<summary>Return true if the entity is a ragdoll body, false otherwise.</summary>
+			<returns>Bool</returns>
+			<example></example>
+		</func>	
+		<func name="GetCorpseAnim" access="Public">
+			<self>Entity</self>
+			<summary>Unknown</summary>
+			<returns></returns>
+			<example></example>
+		</func>	
+		<func name="ItemWeaponSetAmmo" access="Public">
+			<self>Entity - A weapon item</self>
+			<summary>Sets the ammo ammount for a weapon item entity (lying on the ground)</summary>
+			<returns></returns>
+			<example>weapon ItemWeaponSetAmmo( 5, 20 );</example>
+			<param name="clipAmmo">The amount of ammo in the clip.</param>
+			<param name="reserveAmmo">The amount of ammo not in the clip.</param>
+			<param opt="True" name="altWeapon">Pass zero to set ammo for the primary weapon. Pass 1 to set 
+ammo for the alt weapon. The default is 0.</param>
+		</func>	
+		<func name="MoveTo" access="Public">
+			<self>Entity - script_model, script_origin or script_brushmodel</self>
+			<summary>Move this entity to the given point.</summary>
+			<returns></returns>
+			<example>dummy MoveTo( dest_org, .5, .05, .05 );</example>
+			<param name="point">The point to move the entity to</param>
+			<param name="time">The time to move the entity in seconds</param>
+			<param opt="True" name="accelerationTime">The time spent accelerating</param>
+			<param opt="True" name="decelerationTime">The time spent decelerating</param>
+		</func>	
+		<func name="MoveX" access="Public">
+			<self>Entity - script_model, script_origin or script_brushmodel</self>
+			<summary>Move this entity to the given world x value</summary>
+			<returns></returns>
+			<example>train MoveX( -4400, 60, 15, 20 );</example>
+			<param name="xValue">The x value to move the entity to, as a floating point number</param>
+			<param name="time">The time to move the entity in seconds</param>
+			<param opt="True" name="accelerationTime">The time spent accelerating</param>
+			<param opt="True" name="decelerationTime">The time spent decelerating</param>
+		</func>	
+		<func name="MoveY" access="Public">
+			<self>Entity - script_model, script_origin or script_brushmodel</self>
+			<summary>Move this entity to the given world y value</summary>
+			<returns></returns>
+			<example>hangardoor MoveY( 320, 10 );</example>
+			<param name="yValue">The y value to move the entity to, as a floating point number</param>
+			<param name="time">The time to move the entity in seconds</param>
+			<param opt="True" name="accelerationTime">The time spent accelerating</param>
+			<param opt="True" name="decelerationTime">The time spent decelerating</param>
+		</func>	
+		<func name="MoveZ" access="Public">
+			<self>Entity - script_model, script_origin or script_brushmodel</self>
+			<summary>Move this entity to the given world z value</summary>
+			<returns></returns>
+			<example></example>
+			<param name="zValue">The z value to move the entity to, as a floating point number</param>
+			<param name="time">The time to move the entity in seconds</param>
+			<param opt="True" name="accelerationTime">The time spent accelerating</param>
+			<param opt="True" name="decelerationTime">The time spent decelerating</param>
+		</func>	
+		<func name="MoveGravity" access="Public">
+			<self>Entity - script_model, script_origin or script_brushmodel</self>
+			<summary>Fling this entity. It ignores world.</summary>
+			<returns></returns>
+			<example>self MoveGravity( break_vector, time );</example>
+			<param name="initialVelocity">The initial velocity to fling this entity at</param>
+			<param name="time">The time to move the entity in seconds</param>
+		</func>	
+		<func name="RotateTo" access="Public">
+			<self>Entity - script_model, script_origin or script_brushmodel</self>
+			<summary>Rotate this entity to the given world rotation value</summary>
+			<returns></returns>
+			<example>shutter RotateTo( (shutter.angles[0], newYaw, shutter.angles[2]), newTime );</example>
+			<param name="angles">The new world angle to rotate to</param>
+			<param name="time">The time to rotate in seconds</param>
+			<param opt="True" name="accelerationTime">The time spent accelerating in seconds</param>
+			<param opt="True" name="decelerationTime">The time spent decelerating in seconds</param>
+		</func>	
+		<func name="RotatePitch" access="Public">
+			<self>Entity - script_model, script_origin or script_brushmodel</self>
+			<summary>Rotate this entity to the given pitch</summary>
+			<returns></returns>
+			<example>treeorg RotatePitch( -5, 0.26, 0.15, 0.1 );</example>
+			<param name="pitchAngle">The new pitch angle in degrees</param>
+			<param name="time">The time to rotate in seconds</param>
+			<param opt="True" name="accelerationTime">The time spent accelerating in seconds</param>
+			<param opt="True" name="decelerationTime">The time spent decelerating in seconds</param>
+		</func>	
+		<func name="RotateYaw" access="Public">
+			<self>Entity - script_model, script_origin or script_brushmodel</self>
+			<summary>Rotate this entity to the given yaw</summary>
+			<returns></returns>
+			<example></example>
+			<param name="yawAngle">The new yaw angle in degrees</param>
+			<param name="time">The time to rotate in seconds</param>
+			<param opt="True" name="accelerationTime">The time spent accelerating in seconds</param>
+			<param opt="True" name="decelerationTime">The time spent decelerating in seconds</param>
+		</func>	
+		<func name="RotateRoll" access="Public">
+			<self>Entity - script_model, script_origin or script_brushmodel</self>
+			<summary>Rotate this entity to the given roll angle</summary>
+			<returns></returns>
+			<example>self RotateRoll( (2 * 1500 + 3 * Randomfloat( 2500 )) * -1, 5, 0, 0 );</example>
+			<param name="rollAngle">The new roll angle in degrees</param>
+			<param name="time">The time to rotate in seconds</param>
+			<param opt="True" name="accelerationTime">The time spent accelerating in seconds</param>
+			<param opt="True" name="decelerationTime">The time spent decelerating in seconds</param>
+		</func>	
+		<func name="DevAddPitch" access="Public">
+			<self>Entity - script_model, script_origin or script_brushmodel</self>
+			<summary>Add pitch in local space. This is just for development purposes and doesn't interpolate</summary>
+			<returns></returns>
+			<example></example>
+			<param name="pitchAngle">The change in pitch in degrees</param>
+		</func>	
+		<func name="DevAddYaw" access="Public">
+			<self>Entity - script_model, script_origin or script_brushmodel</self>
+			<summary>Add yaw in local space. This is just for development purposes and doesn't interpolate</summary>
+			<returns></returns>
+			<example></example>
+			<param name="yawAngle">The change in yaw in degrees</param>
+		</func>	
+		<func name="DevAddRoll" access="Public">
+			<self>Entity - script_model, script_origin or script_brushmodel</self>
+			<summary>Add yaw in local space. This is just for development purposes and doesn't interpolate</summary>
+			<returns></returns>
+			<example></example>
+			<param name="rollAngle">The change in roll in degrees</param>
+		</func>	
+		<func name="Vibrate" access="Public">
+			<self>Entity</self>
+			<summary>Causes a script entity to vibrate, rotating around its origin, along a given vector dir</summary>
+			<returns></returns>
+			<example>self Vibrate( directionVir, 0.3, 0.4, 1.0 );</example>
+			<param name="direction">Vector - The direction of the vibration</param>
+			<param name="amplitude">The amount of the vibration in degrees</param>
+			<param name="period">The period of the vibration in seconds</param>
+			<param name="time">The length of time of the vibration in seconds</param>
+		</func>	
+		<func name="RotateVelocity" access="Public">
+			<self>Entity - script_model, script_origin or script_brushmodel</self>
+			<summary>Rotate this entity at a particular velocity for a given time</summary>
+			<returns></returns>
+			<example>self RotateVelocity( (x,y,z), 12 );</example>
+			<param name="rotateVelocity">Vector - The rotational velocity to rotate</param>
+			<param name="time">The time to rotate in seconds</param>
+			<param opt="True" name="accelerationTime">The time spent accelerating in seconds</param>
+			<param opt="True" name="decelerationTime">The time spent decelerating in seconds</param>
+		</func>	
+		<func name="Solid" access="Public">
+			<self>Entity - script_brushmodel</self>
+			<summary>Set the solid flag, so that this object is collidable.</summary>
+			<returns></returns>
+			<example>self Solid();</example>
+		</func>	
+		<func name="NotSolid" access="Public">
+			<self>Entity - script_brushmodel</self>
+			<summary>Unsets the solid flag, so that this object is no longer collidable.</summary>
+			<returns></returns>
+			<example>self NotSolid();</example>
+		</func>	
+		<func name="SetCanDamage" access="Public">
+			<self>Entity - script_model, script_origin or script_brushmodel</self>
+			<summary>Set the candamage flag for this entity - this means that it can respond to notifies 
+from bullets and grenade hits</summary>
+			<returns></returns>
+			<example>self SetCanDamage( true );</example>
+			<param name="canDamage">The can damage flag</param>
+		</func>	
+		<func name="PhysicsLaunch" access="Public">
+			<self>Entity - script_model</self>
+			<summary>Permanently turn this entity into a physics object with an intial force vector 
+at the specified point.</summary>
+			<returns></returns>
+			<example>dummy PhysicsLaunch( contact_point, initial_force );</example>
+			<param name="contactPoint">The point to apply the initial force</param>
+			<param name="initialForce">The force vector to apply</param>
+		</func>	
+		<!-- ENTITY -->
+		<!-- VEHICLES -->
+		<func name="FreeHelicopter" access="Public">
+			<self>Vehicle</self>
+			<summary>Unknown</summary>
+			<returns></returns>
+			<example></example>
+			<param name="unknown"></param>
+		</func>	
+		<func name="SetSpeed" access="Public">
+			<self>Vehicle</self>
+			<summary>Sets the speed and acceleration for this vehicle.</summary>
+			<returns></returns>
+			<example>self SetSpeed( 60, 15, 5 );</example>
+			<param name="speed">The speed of the vehicle in miles per hour</param>
+			<param name="acceleration">The acceleration of the vehicle in miles per hour per second</param>
+			<param name="deceleration">Deceleration. If not specified, set to be equal to half of accleration</param>
+		</func>	
+		<func name="GetSpeed" access="Public">
+			<self>Vehicle</self>
+			<summary>Gets the current speed in inches per second.</summary>
+			<returns></returns>
+			<example>self GetSpeed();</example>
+		</func>	
+		<func name="GetSpeedMPH" access="Public">
+			<self>Vehicle</self>
+			<summary>Gets the current speed in miles per hour.</summary>
+			<returns></returns>
+			<example>self GetSpeedMPH();</example>
+		</func>	
+		<func name="ResumeSpeed" access="Public">
+			<self>Vehicle</self>
+			<summary>Sets the vehicle to resume its path speed.</summary>
+			<returns></returns>
+			<example>level.tank ResumeSpeed( 3 );</example>
+			<param name="acceleration">The acceleration to apply to this vehicle in miles per hour per second.</param>
+		</func>	
+		<func name="SetYawSpeed" access="Public">
+			<self>Vehicle</self>
+			<summary>Sets the yaw speed for this vehicle.</summary>
+			<returns></returns>
+			<example>self SetYawSpeed( 120, 60 );</example>
+			<param name="speed">The speed of the vehicle in angles per second</param>
+			<param name="acceleration">The acceleration of the vehicle in angles per second^2</param>
+			<param name="deceleration">Deceleration. If not specified, set to be equal to acceleration</param>
+			<param name="overshootPercent">How much to over shoot goal yaw by. Default 0.1</param>
+		</func>	
+		<func name="SetMaxPitchRoll" access="Public">
+			<self>Vehicle</self>
+			<summary>Sets max pitch and roll angle for this vehicle.</summary>
+			<returns></returns>
+			<example>self SetMaxPitchRoll( 30, 30 );</example>
+			<param name="pitch">Max pitch angle</param>
+			<param name="roll">Max roll angle</param>
+		</func>	
+		<func name="SetTurningAbility" access="Public">
+			<self>Vehicle</self>
+			<summary>If this is higher, helicopters can make sharper turns to match goal positions better.</summary>
+			<returns></returns>
+			<example>self SetTurningAbility( 0.9 );</example>
+			<param name="turningAbility">Between 0.001 and 1.0. Defaults to 0.5</param>
+		</func>	
+		<func name="SetAirResistance" access="Public">
+			<self>Vehicle</self>
+			<summary>Sets the speed at which air resistance maxes out. Air resistance ramps up exponentially 
+up to this speed. Set it to a high value to flatten helicopter when it is done accelerating 
+to move at the desired speed</summary>
+			<returns></returns>
+			<example>self SetAirResistance( 60 );</example>
+			<param name="maxAirResistanceSpeed">speed at which air resistance maxes out (MPH)</param>
+		</func>	
+		<func name="SetHoverParams" access="Public">
+			<self>Vehicle</self>
+			<summary>Set the hovering parameters.</summary>
+			<returns></returns>
+			<example>self SetHoverParams( 50, 1, 0.5 );</example>
+			<param name="radius">The hovering range.</param>
+			<param name="speed">Speed to hover at (MPH)</param>
+			<param name="accel">Acceleration to hover at (MPH/s)</param>
+		</func>	
+		<func name="SetNearGoalNotifyDist" access="Public">
+			<self>Vehicle</self>
+			<summary>Set distance near goal at which near_goal notification should be sent once.</summary>
+			<returns></returns>
+			<example>tank SetNearGoalNotifyDist( 50 )</example>
+			<param name="dist">Distance to goal position</param>
+		</func>	
+		<func name="SetVehGoalPos" access="Public">
+			<self>Vehicle</self>
+			<summary>Set the target position for this vehicle.</summary>
+			<returns></returns>
+			<example>tank SetVehGoalPos( (0, 0, 0), 1 )</example>
+			<param name="goalPosition">The goal position</param>
+			<param name="stopAtGoal">Whether the vehicle should slow down to stop at the goal position</param>
+		</func>	
+		<func name="SetGoalYaw" access="Public">
+			<self>Vehicle</self>
+			<summary>Set the goal yaw direction for this vehicle. Goal yaw is ignored if vehicle doesn't stop at goal. 
+Lookat entity has priority over goal yaw</summary>
+			<returns></returns>
+			<example>level.flak1 SetGoalYaw( vec1 );</example>
+			<param name="yaw">The yaw direction of the target</param>
+		</func>	
+		<func name="ClearGoalYaw" access="Public">
+			<self>Vehicle</self>
+			<summary>Clear the goal yaw direction for this vehicle.</summary>
+			<returns></returns>
+			<example>level.flak1 ClearGoalYaw();</example>
+		</func>	
+		<func name="SetTargetYaw" access="Public">
+			<self>Vehicle</self>
+			<summary>Set the target yaw direction for this vehicle. Goal yaw has priority over target yaw.</summary>
+			<returns></returns>
+			<example>level.flak1 SetTargetYaw( vec1 );</example>
+			<param name="yaw">The yaw direction of the target</param>
+		</func>	
+		<func name="ClearTargetYaw" access="Public">
+			<self>Vehicle</self>
+			<summary>Clear the target yaw direction for this vehicle.</summary>
+			<returns></returns>
+			<example>level.flak1 ClearTargetYaw();</example>
+			<param name="yaw"></param>
+		</func>	
+		<func name="SetLookAtEnt" access="Public">
+			<self>Vehicle</self>
+			<summary>Set the entity this vehicle will orient towards.</summary>
+			<returns></returns>
+			<example>eFlak88 SetLookAtEnt( eFlaktarget );</example>
+			<param name="entity">The target.</param>
+		</func>	
+		<func name="ClearLookAtEnt" access="Public">
+			<self>Vehicle</self>
+			<summary>Clear the entity the vehicle is orienting towards.</summary>
+			<returns></returns>
+			<example>eTank ClearLookAtEnt();</example>
+		</func>	
+		<func name="SetVehWeapon" access="Public">
+			<self>Vehicle</self>
+			<summary>Set the vehicle's weapon</summary>
+			<returns></returns>
+			<example>chopper SetVehWeapon( "AGM_114" );</example>
+			<param name="weaponName"></param>
+		</func>	
+		<func name="FireWeapon" access="Public">
+			<self>Vehicle</self>
+			<summary>Fire the vehicle's weapon</summary>
+			<returns></returns>
+			<example>nFlak FireWeapon();</example>
+			<param name="barrelTag">The tag name of the barrel to fire from. Passing in nothing or an empty string 
+will default to use the vehicle's main turret.</param>
+			<param name="targetEnt">A target entity for guided missiles</param>
+			<param name="targetOffset"></param>
+		</func>	
+		<func name="SetTurretTargetVec" access="Public">
+			<self>Vehicle</self>
+			<summary>Set the target position for this vehicle turret.</summary>
+			<returns></returns>
+			<example>level.flak1 SetTurretTargetVec( vec1 );</example>
+			<param name="targetPosition">The position of the target</param>
+		</func>	
+		<func name="SetTurretTargetEnt" access="Public">
+			<self>Vehicle</self>
+			<summary>Set the target entity for this vehicle turret.</summary>
+			<returns></returns>
+			<example>eFlak88 SetTurretTargetEnt( eFlaktarget, eFlaktarget.origin );</example>
+			<param name="targetEntity">The target.</param>
+			<param name="targetOffset">The target offset.</param>
+		</func>	
+		<func name="ClearTurretTarget" access="Public">
+			<self>Vehicle</self>
+			<summary>Clear the target for the vehicle turret.</summary>
+			<returns></returns>
+			<example>eTank ClearTurretTarget();</example>
+		</func>	
+		<func name="SetVehicleTeam" access="Public">
+			<self>Vehicle</self>
+			<summary>Set which team a vehicle is on.</summary>
+			<returns></returns>
+			<example></example>
+			<param name="team">The team name. Must be either "allies", "axis", or "none".</param>
+		</func>	
+		<func name="SetDamageStage" access="Public">
+			<self>Vehicle</self>
+			<summary>Unknown</summary>
+			<returns></returns>
+			<example></example>
+			<param name="unknown"></param>
+		</func>	
+		<!-- VEHICLES -->
+	</content>
+</scriptinfo>

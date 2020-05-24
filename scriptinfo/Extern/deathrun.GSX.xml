@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Používa sa len pre potreby include alebo ako zdroj informácií v notepade, 
+	obsahuje len informácie potrebné pre prácu "z vonku" -->
+
+<scriptinfo>
+	<!-- Ak je extern True, nebude sa hľadať odpovedajúci script ale použije sa táto dokumentácia
+		Ak je False, použije sa dokumentácia len v prípade, že sa v scripte neurobili žiadne zmeny -->
+	<!-- Ak je global True, konštanty a funkcie budú dostupné globálne vo všetkých scriptoch -->
+	<settings global="True">
+		<!-- Podľa tohto mena sa dokumentácia zaradí v strome v notepade -->
+		<name>NINJA DR API</name>
+	</settings>
+	
+	<content>
+		<func name="DBData" access="Public">
+			<self></self>
+			<summary>Permanentlly saves a string value.</summary>
+			<returns>String - Value</returns>
+			<example>DBData("falls", 5); falls = DBData("falls");</example>
+			<param name="sKey"></param>
+			<param opt="True" name="sValue"></param>
+		</func>	
+	</content>
+</scriptinfo>

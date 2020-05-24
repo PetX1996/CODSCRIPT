@@ -38,8 +38,32 @@ namespace CODSCRIPT.Content
                     case "DateTime":
                         e = new Token(TokenType.String, DateTime.Now.ToString());
                         break;
+                    case "FilePath":
+                        e = new Token(TokenType.String, scriptInfo.SF.SFPath);
+                        break;
+                    case "FilePathFull":
+                        e = new Token(TokenType.String, scriptInfo.SF.SFFullPath);
+                        break;
                     case "Line":
                         e = new Token(TokenType.Number, treeInfo.Current.LineIndex + 1);
+                        break;
+                    case "FunctionName":
+                        var function1 = treeInfo.FindBlockInStack<FuncDef>(true);
+                        var function1Name = "";
+                        if (function1 != null)
+                        {
+                          function1Name = function1.FuncInfo.Name;
+                        }
+                        e = new Token(TokenType.String, function1Name);
+                        break;
+                    case "FunctionSignature":
+                        var function2 = treeInfo.FindBlockInStack<FuncDef>(true);
+                        var function2Signature = "";
+                        if (function2 != null)
+                        {
+                          function2Signature = function2.FuncInfo.GetHead();
+                        }
+                        e = new Token(TokenType.String, function2Signature);
                         break;
                     case "VersionInt":
                         e = new Token(TokenType.Number, scriptInfo.SF.Manager.Settings.VersionInt);

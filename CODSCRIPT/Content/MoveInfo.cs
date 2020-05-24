@@ -376,6 +376,24 @@ namespace CODSCRIPT.Content
 
             return false;
         }
+
+        public TBlock FindBlockInStack<TBlock>(bool includeCurrentBlock)
+          where TBlock : IBlock
+        {
+          if (this.TreeMode == SearchTree.ContentBlock || this.TreeMode == SearchTree.ChildrenBlock)
+            throw new InvalidOperationException("TreeMode is not a Tree type.");
+
+          foreach (TreeInfo info in treeInfoStack)
+          {
+            if (info.Block is TBlock)
+              return (TBlock)info.Block;
+          }
+
+          if (includeCurrentBlock && CurrentBlock is TBlock)
+            return (TBlock)CurrentBlock;
+
+          return default (TBlock);
+        }
         #endregion
 
         #region Searching

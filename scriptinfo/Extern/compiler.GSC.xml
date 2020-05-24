@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Používa sa len pre potreby include alebo ako zdroj informácií v notepade, 
+	obsahuje len informácie potrebné pre prácu "z vonku" -->
+
+<scriptinfo>
+	<!-- Ak je extern True, nebude sa hľadať odpovedajúci script ale použije sa táto dokumentácia
+		Ak je False, použije sa dokumentácia len v prípade, že sa v scripte neurobili žiadne zmeny -->
+	<!-- Ak je global True, konštanty a funkcie budú dostupné globálne vo všetkých scriptoch -->
+	<settings global="True">
+		<!-- Podľa tohto mena sa dokumentácia zaradí v strome v notepade -->
+		<name>COMPILER</name>
+	</settings>
+	
+	<content>
+		<const name="FilePath" access="Public">
+			<summary></summary>
+			<value></value>
+		</const>
+		<const name="FilePathFull" access="Public">
+			<summary></summary>
+			<value></value>
+		</const>
+		<const name="FunctionName" access="Public">
+			<summary></summary>
+			<value></value>
+		</const>
+		<const name="FunctionSignature" access="Public">
+			<summary></summary>
+			<value></value>
+		</const>
+		<const name="Line" access="Public">
+			<summary></summary>
+			<value></value>
+		</const>
+		<const name="Date" access="Public">
+			<summary></summary>
+			<value></value>
+		</const>
+		<const name="Time" access="Public">
+			<summary></summary>
+			<value></value>
+		</const>
+		<const name="DateTime" access="Public">
+			<summary></summary>
+			<value></value>
+		</const>
+		<const name="VersionInt" access="Public">
+			<summary></summary>
+			<value></value>
+		</const>
+		<const name="VersionStr" access="Public">
+			<summary></summary>
+			<value></value>
+		</const>
+		<const name="TargetPlatform" access="Public">
+			<summary>Current target platform.</summary>
+			<value></value>
+		</const>
+		<const name="TargetPlatform_Windows" access="Public">
+			<summary></summary>
+			<value></value>
+		</const>
+		<const name="TargetPlatform_Linux" access="Public">
+			<summary></summary>
+			<value></value>
+		</const>
+		<const name="TargetPlatform_LinuxNinja" access="Public">
+			<summary></summary>
+			<value></value>
+		</const>
+		<const name="TargetConfiguration" access="Public">
+			<summary>Current target configuration.</summary>
+			<value></value>
+		</const>	
+		<const name="TargetConfiguration_Debug" access="Public">
+			<summary></summary>
+			<value></value>
+		</const>
+		<const name="TargetConfiguration_Release" access="Public">
+			<summary></summary>
+			<value></value>
+		</const>
+		<const name="TargetConfiguration_FinalRelease" access="Public">
+			<summary></summary>
+			<value></value>
+		</const>	
+	</content>
+</scriptinfo>

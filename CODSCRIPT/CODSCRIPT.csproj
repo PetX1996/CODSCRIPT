@@ -122,8 +122,8 @@
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>copy /Y "$(TargetDir)CODSCRIPT.dll" "D:\Visual Studio 2010\Projects\CODSCRIPT\NppSourceCode\PowerEditor\visual.net\Unicode Debug\plugins\CODSCRIPTNpp\CODSCRIPT.dll"
-copy /Y "$(TargetDir)CODSCRIPT.pdb" "D:\Visual Studio 2010\Projects\CODSCRIPT\NppSourceCode\PowerEditor\visual.net\Unicode Debug\plugins\CODSCRIPTNpp\CODSCRIPT.pdb"</PostBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
