@@ -1,0 +1,33 @@
+// compile-time constants
+// [private|public] name = value;
+public IA_Flags_NoCollide = 1;
+// use in code
+self IA_DisableFlag( IA_FLAGS_NOCOLLIDE );
+
+// usings
+// [private|public] using name = file path;
+public using C_IMAPVARS = custom\include\_mapvars;
+// use in code
+sPopInfo = C_IMAPVARS::Get(sMapName, "pop");
+// instead of
+sPopInfo = custom\include\_mapvars::Get(sMapName, "pop");
+
+// foreach
+foreach (var in array)
+  statement;
+
+foreach (var in array)
+{
+  statement;
+}
+
+// do...while
+do
+  statement;
+while (exp);
+
+do
+{
+  statement;
+}
+while (exp);

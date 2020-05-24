@@ -1,0 +1,143 @@
+// CODSCRIPT v2 
+// valid statements
+
+while( expression )
+	statement;
+
+do
+	statement;
+while( expression );
+
+for([initializers]; [expression]; [iterators])
+	statement;
+
+foreach( element in array )
+	statement;
+	
+if( expression )
+	statement;
+[else
+	statement;]
+
+switch( expression )
+{
+	case constant-expression:
+		statement;
+	[default:
+		statement;]
+}
+
+// function calls
+funcName(params);
+path::funcName(params);
+[[funcPointer]](params);
+
+// waits
+wait expression; waittillframeend;
+
+// assignment
+var = expression;
+
+array = [];
+array = { expression1, expression2 };
+
+// return
+return [expression];
+
+
+[public] [private] // modifiers
+[sealed] // read-only modifier
+[overwrite]
+
+break; continue; // jump
+
+thread // function call attribute
+
+true false undefined // literal
+	
+// operators
++ - * / % // arithmetic
+
+& | ^ ! ~ && || // bits & logical
+
+++ -- // increment, decrement
+
+<< >> // shift
+
+== != < > <= >= // equal
+
+= += -= *= /= %= &= |= ^= <<= >>= // assign
+
+.	object.member // object members
+
+::	[path]::funcName // function address
+::	[path::]constName // const value
+
+// operands
+"string"
+5.0
+level
+self
+true
+false
+undefined
+
+// variable and constant
+[object.]var[[arrayExpression]]
+[path::]const
+
+// delegate create
+[path]::func
+
+// delegate call
+[selfExpression] [[delegate]]([funcArgsExpression])
+
+// function call
+[selfExpression] [thread] [path::]funcName([funcArgsExpression])
+
+// preprocessor
+#include path; // include
+
+#region name // region
+#endregion
+
+// blocks
+// comment
+
+/// <summary>
+/// This is function summary.
+/// </summary>
+/// <param name="firstParam">This is info about first function parameter.</param>
+/// <returns>This is info about a return value.</returns>
+
+() // bracket
+
+[] // indexer
+
+{} // fold
+
+"" // string
+
+&"" // string
+// single-line comment
+/* */ // block comment
+/# #/ // dev code
+
+path::function
+path::variable
+#include path;
+
+Examples:
+// compile-time constants
+// [private|public] name = value;
+public IA_Flags_NoCollide = 1;
+// use in code
+self IA_DisableFlag( IA_FLAGS_NOCOLLIDE );
+
+// usings
+// [private|public] using name = file path;
+public using C_IMAPVARS = custom\include\_mapvars;
+// use in code
+sPopInfo = C_IMAPVARS::Get(sMapName, "pop");
+// instead of
+sPopInfo = custom\include\_mapvars::Get(sMapName, "pop");
